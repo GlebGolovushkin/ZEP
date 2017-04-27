@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище ObjectZEPModelContainer" CdmEntityContainer="ZepContext">
+    <EntitySetMapping Name="Function">
+      <EntityTypeMapping TypeName="ObjectZEPModel.Function">
+        <MappingFragment StoreEntitySet="Function">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="HierLevel" ColumnName="HierLevel" />
+          <ScalarProperty Name="Parent" ColumnName="Parent" />
+          <ScalarProperty Name="FunctionGroup" ColumnName="FunctionGroup" />
+          <ScalarProperty Name="Specialization" ColumnName="Specialization" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Location">
+      <EntityTypeMapping TypeName="ObjectZEPModel.Location">
+        <MappingFragment StoreEntitySet="Location">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="HierLevel" ColumnName="HierLevel" />
+          <ScalarProperty Name="Parent" ColumnName="Parent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Location_Classificator">
+      <EntityTypeMapping TypeName="ObjectZEPModel.Location_Classificator">
+        <MappingFragment StoreEntitySet="Location_Classificator">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Location_Classified">
+      <EntityTypeMapping TypeName="ObjectZEPModel.Location_Classified">
+        <MappingFragment StoreEntitySet="Location_Classified">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Model">
+      <EntityTypeMapping TypeName="ObjectZEPModel.Model">
+        <MappingFragment StoreEntitySet="Model">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Model_Classificator">
+      <EntityTypeMapping TypeName="ObjectZEPModel.Model_Classificator">
+        <MappingFragment StoreEntitySet="Model_Classificator">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Graphical" ColumnName="Graphical" />
+          <ScalarProperty Name="Textual" ColumnName="Textual" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Model_Classified">
+      <EntityTypeMapping TypeName="ObjectZEPModel.Model_Classified">
+        <MappingFragment StoreEntitySet="Model_Classified">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="Model_Code_1" ColumnName="Model_Code_1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Model_Object_Task">
+      <EntityTypeMapping TypeName="ObjectZEPModel.Model_Object_Task">
+        <MappingFragment StoreEntitySet="Model_Object_Task">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Object" ColumnName="Object" />
+          <ScalarProperty Name="Task" ColumnName="Task" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="Project_Stage" ColumnName="Project_Stage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Object">
+      <EntityTypeMapping TypeName="ObjectZEPModel.Object">
+        <MappingFragment StoreEntitySet="Object">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="HierLevel" ColumnName="HierLevel" />
+          <ScalarProperty Name="Parent" ColumnName="Parent" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="FunctionID" ColumnName="FunctionID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Object_Classificator">
+      <EntityTypeMapping TypeName="ObjectZEPModel.Object_Classificator">
+        <MappingFragment StoreEntitySet="Object_Classificator">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="ParentCode" ColumnName="ParentCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Object_Classificator_2">
+      <EntityTypeMapping TypeName="ObjectZEPModel.Object_Classificator_2">
+        <MappingFragment StoreEntitySet="Object_Classificator_2">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Group_Name" ColumnName="Group_Name" />
+          <ScalarProperty Name="GroupCode" ColumnName="GroupCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Object_Classified">
+      <EntityTypeMapping TypeName="ObjectZEPModel.Object_Classified">
+        <MappingFragment StoreEntitySet="Object_Classified">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Object" ColumnName="Object" />
+          <ScalarProperty Name="Object_Code_1" ColumnName="Object_Code_1" />
+          <ScalarProperty Name="Object_Code_2" ColumnName="Object_Code_2" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Person">
+      <EntityTypeMapping TypeName="ObjectZEPModel.Person">
+        <MappingFragment StoreEntitySet="Person">
+          <ScalarProperty Name="Person_Id" ColumnName="Person_Id" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Predecessor">
+      <EntityTypeMapping TypeName="ObjectZEPModel.Predecessor">
+        <MappingFragment StoreEntitySet="Predecessor">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Task" ColumnName="Task" />
+          <ScalarProperty Name="Task_Pred" ColumnName="Task_Pred" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="ObjectZEPModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Task">
+      <EntityTypeMapping TypeName="ObjectZEPModel.Task">
+        <MappingFragment StoreEntitySet="Task">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Task_Classificator">
+      <EntityTypeMapping TypeName="ObjectZEPModel.Task_Classificator">
+        <MappingFragment StoreEntitySet="Task_Classificator">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="TaskGroup" ColumnName="TaskGroup" />
+          <ScalarProperty Name="Group_Code" ColumnName="Group_Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Task_Classified">
+      <EntityTypeMapping TypeName="ObjectZEPModel.Task_Classified">
+        <MappingFragment StoreEntitySet="Task_Classified">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Task" ColumnName="Task" />
+          <ScalarProperty Name="Task_Code_1" ColumnName="Task_Code_1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="main_View">
+      <EntityTypeMapping TypeName="ObjectZEPModel.main_View">
+        <MappingFragment StoreEntitySet="main_View">
+          <ScalarProperty Name="Project_Stage" ColumnName="Project_Stage" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

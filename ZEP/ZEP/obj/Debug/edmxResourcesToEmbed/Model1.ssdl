@@ -1,0 +1,484 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище ObjectZEPModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Function">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="HierLevel" Type="int" />
+    <Property Name="Parent" Type="int" />
+    <Property Name="FunctionGroup" Type="nvarchar" MaxLength="50" />
+    <Property Name="Specialization" Type="nvarchar" MaxLength="50" />
+    <Property Name="Role" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Location">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="HierLevel" Type="int" />
+    <Property Name="Parent" Type="int" />
+  </EntityType>
+  <EntityType Name="Location_Classificator">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="3" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Location_Classified">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Location" Type="int" Nullable="false" />
+    <Property Name="Code" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Model">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Model_Classificator">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" MaxLength="10" />
+    <Property Name="Graphical" Type="bit" Nullable="false" />
+    <Property Name="Textual" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Model_Classified">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Model" Type="int" Nullable="false" />
+    <Property Name="Model_Code_1" Type="int" />
+  </EntityType>
+  <EntityType Name="Model_Object_Task">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Object" Type="int" />
+    <Property Name="Task" Type="int" />
+    <Property Name="Model" Type="int" />
+    <Property Name="Project_Stage" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Object">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="HierLevel" Type="int" />
+    <Property Name="Parent" Type="int" />
+    <Property Name="Location" Type="int" />
+    <Property Name="FunctionID" Type="int" />
+  </EntityType>
+  <EntityType Name="Object_Classificator">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar(max)" Nullable="false" />
+    <Property Name="Code" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ParentCode" Type="int" />
+  </EntityType>
+  <EntityType Name="Object_Classificator_2">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Group_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="GroupCode" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Object_Classified">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Object" Type="int" Nullable="false" />
+    <Property Name="Object_Code_1" Type="int" />
+    <Property Name="Object_Code_2" Type="int" />
+    <Property Name="Location" Type="int" />
+  </EntityType>
+  <EntityType Name="Person">
+    <Key>
+      <PropertyRef Name="Person_Id" />
+    </Key>
+    <Property Name="Person_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="varchar" MaxLength="150" />
+    <Property Name="Password" Type="varchar" MaxLength="50" />
+    <Property Name="Role" Type="int" />
+  </EntityType>
+  <EntityType Name="Predecessor">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Task" Type="int" Nullable="false" />
+    <Property Name="Task_Pred" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Task">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Task_Classificator">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar(max)" Nullable="false" />
+    <Property Name="TaskGroup" Type="varchar" MaxLength="50" />
+    <Property Name="Group_Code" Type="varchar" MaxLength="3" />
+  </EntityType>
+  <EntityType Name="Task_Classified">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Task" Type="int" Nullable="false" />
+    <Property Name="Task_Code_1" Type="int" />
+  </EntityType>
+  <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "ObjectZEP.dbo.Data" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+  <EntityType Name="Data">
+    <Key>
+      <PropertyRef Name="Задача" />
+      <PropertyRef Name="Классификатор задачи" />
+      <PropertyRef Name="Классификатор объекта" />
+      <PropertyRef Name="Модель" />
+      <PropertyRef Name="Классификатор модели" />
+    </Key>
+    <Property Name="Задача" Type="varchar(max)" Nullable="false" />
+    <Property Name="Классификатор задачи" Type="varchar(max)" Nullable="false" />
+    <Property Name="Объект" Type="nvarchar(max)" />
+    <Property Name="Классификатор объекта" Type="varchar(max)" Nullable="false" />
+    <Property Name="Модель" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Классификатор модели" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "ObjectZEP.dbo.main_View" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+  <EntityType Name="main_View">
+    <Key>
+      <PropertyRef Name="Expr1" />
+    </Key>
+    <Property Name="Project_Stage" Type="nvarchar" MaxLength="50" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="Expr1" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Location_Classified_Location">
+    <End Role="Location" Type="Self.Location" Multiplicity="1" />
+    <End Role="Location_Classified" Type="Self.Location_Classified" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Location">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Location_Classified">
+        <PropertyRef Name="Location" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Location_Classified_Location_Classificator">
+    <End Role="Location_Classificator" Type="Self.Location_Classificator" Multiplicity="1" />
+    <End Role="Location_Classified" Type="Self.Location_Classified" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Location_Classificator">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Location_Classified">
+        <PropertyRef Name="Code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Model_Classified_Model">
+    <End Role="Model" Type="Self.Model" Multiplicity="1" />
+    <End Role="Model_Classified" Type="Self.Model_Classified" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Model">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Model_Classified">
+        <PropertyRef Name="Model" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Model_Classified_Model_Classificator">
+    <End Role="Model_Classificator" Type="Self.Model_Classificator" Multiplicity="0..1" />
+    <End Role="Model_Classified" Type="Self.Model_Classified" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Model_Classificator">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Model_Classified">
+        <PropertyRef Name="Model_Code_1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Model_Object_Task_Model_Classified">
+    <End Role="Model_Classified" Type="Self.Model_Classified" Multiplicity="0..1" />
+    <End Role="Model_Object_Task" Type="Self.Model_Object_Task" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Model_Classified">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Model_Object_Task">
+        <PropertyRef Name="Model" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Object_Classified_Location_Classified">
+    <End Role="Location_Classified" Type="Self.Location_Classified" Multiplicity="0..1" />
+    <End Role="Object_Classified" Type="Self.Object_Classified" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Location_Classified">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Object_Classified">
+        <PropertyRef Name="Location" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Object_Classified_Object">
+    <End Role="Object" Type="Self.Object" Multiplicity="1" />
+    <End Role="Object_Classified" Type="Self.Object_Classified" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Object">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Object_Classified">
+        <PropertyRef Name="Object" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Object_Classified_Object_Classificator">
+    <End Role="Object_Classificator" Type="Self.Object_Classificator" Multiplicity="0..1" />
+    <End Role="Object_Classified" Type="Self.Object_Classified" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Object_Classificator">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Object_Classified">
+        <PropertyRef Name="Object_Code_1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Object_Classified_Object_Classificator_2">
+    <End Role="Object_Classificator_2" Type="Self.Object_Classificator_2" Multiplicity="0..1" />
+    <End Role="Object_Classified" Type="Self.Object_Classified" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Object_Classificator_2">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Object_Classified">
+        <PropertyRef Name="Object_Code_2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Object_Function">
+    <End Role="Function" Type="Self.Function" Multiplicity="0..1" />
+    <End Role="Object" Type="Self.Object" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Function">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Object">
+        <PropertyRef Name="FunctionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Object_Location">
+    <End Role="Location" Type="Self.Location" Multiplicity="0..1" />
+    <End Role="Object" Type="Self.Object" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Location">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Object">
+        <PropertyRef Name="Location" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ObjectTask_Object_Classified">
+    <End Role="Object_Classified" Type="Self.Object_Classified" Multiplicity="0..1" />
+    <End Role="Model_Object_Task" Type="Self.Model_Object_Task" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Object_Classified">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Model_Object_Task">
+        <PropertyRef Name="Object" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ObjectTask_Task_Classified">
+    <End Role="Task_Classified" Type="Self.Task_Classified" Multiplicity="0..1" />
+    <End Role="Model_Object_Task" Type="Self.Model_Object_Task" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Task_Classified">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Model_Object_Task">
+        <PropertyRef Name="Task" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Predecessor_Model_Object_Task">
+    <End Role="Model_Object_Task" Type="Self.Model_Object_Task" Multiplicity="1" />
+    <End Role="Predecessor" Type="Self.Predecessor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Model_Object_Task">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Predecessor">
+        <PropertyRef Name="Task" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Task_Classified_Task">
+    <End Role="Task" Type="Self.Task" Multiplicity="1" />
+    <End Role="Task_Classified" Type="Self.Task_Classified" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Task">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Task_Classified">
+        <PropertyRef Name="Task" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Task_Classified_Task_Classificator">
+    <End Role="Task_Classificator" Type="Self.Task_Classificator" Multiplicity="0..1" />
+    <End Role="Task_Classified" Type="Self.Task_Classified" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Task_Classificator">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Task_Classified">
+        <PropertyRef Name="Task_Code_1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище ObjectZEPModelContainer">
+    <EntitySet Name="Function" EntityType="Self.Function" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Location" EntityType="Self.Location" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Location_Classificator" EntityType="Self.Location_Classificator" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Location_Classified" EntityType="Self.Location_Classified" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Model" EntityType="Self.Model" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Model_Classificator" EntityType="Self.Model_Classificator" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Model_Classified" EntityType="Self.Model_Classified" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Model_Object_Task" EntityType="Self.Model_Object_Task" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Object" EntityType="Self.Object" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Object_Classificator" EntityType="Self.Object_Classificator" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Object_Classificator_2" EntityType="Self.Object_Classificator_2" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Object_Classified" EntityType="Self.Object_Classified" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Person" EntityType="Self.Person" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Predecessor" EntityType="Self.Predecessor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Task" EntityType="Self.Task" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Task_Classificator" EntityType="Self.Task_Classificator" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Task_Classified" EntityType="Self.Task_Classified" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Data" EntityType="Self.Data" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Data].[Задача] AS [Задача], 
+    [Data].[Классификатор задачи] AS [Классификатор задачи], 
+    [Data].[Объект] AS [Объект], 
+    [Data].[Классификатор объекта] AS [Классификатор объекта], 
+    [Data].[Модель] AS [Модель], 
+    [Data].[Классификатор модели] AS [Классификатор модели]
+    FROM [dbo].[Data] AS [Data]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="main_View" EntityType="Self.main_View" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [main_View].[Project_Stage] AS [Project_Stage], 
+    [main_View].[Name] AS [Name], 
+    [main_View].[Expr1] AS [Expr1]
+    FROM [dbo].[main_View] AS [main_View]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_Location_Classified_Location" Association="Self.FK_Location_Classified_Location">
+      <End Role="Location" EntitySet="Location" />
+      <End Role="Location_Classified" EntitySet="Location_Classified" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Location_Classified_Location_Classificator" Association="Self.FK_Location_Classified_Location_Classificator">
+      <End Role="Location_Classificator" EntitySet="Location_Classificator" />
+      <End Role="Location_Classified" EntitySet="Location_Classified" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Model_Classified_Model" Association="Self.FK_Model_Classified_Model">
+      <End Role="Model" EntitySet="Model" />
+      <End Role="Model_Classified" EntitySet="Model_Classified" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Model_Classified_Model_Classificator" Association="Self.FK_Model_Classified_Model_Classificator">
+      <End Role="Model_Classificator" EntitySet="Model_Classificator" />
+      <End Role="Model_Classified" EntitySet="Model_Classified" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Model_Object_Task_Model_Classified" Association="Self.FK_Model_Object_Task_Model_Classified">
+      <End Role="Model_Classified" EntitySet="Model_Classified" />
+      <End Role="Model_Object_Task" EntitySet="Model_Object_Task" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Object_Classified_Location_Classified" Association="Self.FK_Object_Classified_Location_Classified">
+      <End Role="Location_Classified" EntitySet="Location_Classified" />
+      <End Role="Object_Classified" EntitySet="Object_Classified" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Object_Classified_Object" Association="Self.FK_Object_Classified_Object">
+      <End Role="Object" EntitySet="Object" />
+      <End Role="Object_Classified" EntitySet="Object_Classified" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Object_Classified_Object_Classificator" Association="Self.FK_Object_Classified_Object_Classificator">
+      <End Role="Object_Classificator" EntitySet="Object_Classificator" />
+      <End Role="Object_Classified" EntitySet="Object_Classified" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Object_Classified_Object_Classificator_2" Association="Self.FK_Object_Classified_Object_Classificator_2">
+      <End Role="Object_Classificator_2" EntitySet="Object_Classificator_2" />
+      <End Role="Object_Classified" EntitySet="Object_Classified" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Object_Function" Association="Self.FK_Object_Function">
+      <End Role="Function" EntitySet="Function" />
+      <End Role="Object" EntitySet="Object" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Object_Location" Association="Self.FK_Object_Location">
+      <End Role="Location" EntitySet="Location" />
+      <End Role="Object" EntitySet="Object" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ObjectTask_Object_Classified" Association="Self.FK_ObjectTask_Object_Classified">
+      <End Role="Object_Classified" EntitySet="Object_Classified" />
+      <End Role="Model_Object_Task" EntitySet="Model_Object_Task" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ObjectTask_Task_Classified" Association="Self.FK_ObjectTask_Task_Classified">
+      <End Role="Task_Classified" EntitySet="Task_Classified" />
+      <End Role="Model_Object_Task" EntitySet="Model_Object_Task" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Predecessor_Model_Object_Task" Association="Self.FK_Predecessor_Model_Object_Task">
+      <End Role="Model_Object_Task" EntitySet="Model_Object_Task" />
+      <End Role="Predecessor" EntitySet="Predecessor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Task_Classified_Task" Association="Self.FK_Task_Classified_Task">
+      <End Role="Task" EntitySet="Task" />
+      <End Role="Task_Classified" EntitySet="Task_Classified" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Task_Classified_Task_Classificator" Association="Self.FK_Task_Classified_Task_Classificator">
+      <End Role="Task_Classificator" EntitySet="Task_Classificator" />
+      <End Role="Task_Classified" EntitySet="Task_Classified" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
