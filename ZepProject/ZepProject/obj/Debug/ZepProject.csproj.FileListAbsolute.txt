@@ -1,0 +1,14 @@
+c:\users\танька\documents\visual studio 2015\Projects\ZepProject\ZepProject\bin\Debug\ZepProject.exe.config
+C:\Users\Танька\documents\visual studio 2015\Projects\ZepProject\ZepProject\bin\Debug\ZepProject.exe
+C:\Users\Танька\documents\visual studio 2015\Projects\ZepProject\ZepProject\bin\Debug\ZepProject.pdb
+C:\Users\Танька\documents\visual studio 2015\Projects\ZepProject\ZepProject\bin\Debug\EntityFramework.dll
+C:\Users\Танька\documents\visual studio 2015\Projects\ZepProject\ZepProject\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Танька\documents\visual studio 2015\Projects\ZepProject\ZepProject\bin\Debug\EntityFramework.xml
+C:\Users\Танька\documents\visual studio 2015\Projects\ZepProject\ZepProject\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Танька\documents\visual studio 2015\Projects\ZepProject\ZepProject\obj\Debug\ZepProject.csprojResolveAssemblyReference.cache
+C:\Users\Танька\documents\visual studio 2015\Projects\ZepProject\ZepProject\obj\Debug\ZepProject.LogIn.resources
+C:\Users\Танька\documents\visual studio 2015\Projects\ZepProject\ZepProject\obj\Debug\ZepProject.Properties.Resources.resources
+C:\Users\Танька\documents\visual studio 2015\Projects\ZepProject\ZepProject\obj\Debug\ZepProject.csproj.GenerateResource.Cache
+C:\Users\Танька\documents\visual studio 2015\Projects\ZepProject\ZepProject\obj\Debug\ZepProject.exe
+C:\Users\Танька\documents\visual studio 2015\Projects\ZepProject\ZepProject\obj\Debug\ZepProject.pdb
+C:\Users\Танька\documents\visual studio 2015\Projects\ZepProject\ZepProject\obj\Debug\ZepProject.DbUpdating.resources

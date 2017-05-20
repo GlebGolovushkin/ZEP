@@ -1,0 +1,616 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище ZEPModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="Department_Id" />
+    </Key>
+    <Property Name="Department_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Department_Name" Type="nchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Department_Object">
+    <Key>
+      <PropertyRef Name="Department_Object_Id" />
+    </Key>
+    <Property Name="Department_Id" Type="int" />
+    <Property Name="Object_Id" Type="int" />
+    <Property Name="Department_Object_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Department_User">
+    <Key>
+      <PropertyRef Name="Department_User_Id" />
+    </Key>
+    <Property Name="Deprtment_Id" Type="int" />
+    <Property Name="User_Id" Type="int" />
+    <Property Name="Department_User_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Document">
+    <Key>
+      <PropertyRef Name="Document_Id" />
+    </Key>
+    <Property Name="Document_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Document_Name" Type="nchar" MaxLength="50" />
+    <Property Name="Type" Type="int" />
+  </EntityType>
+  <EntityType Name="Object">
+    <Key>
+      <PropertyRef Name="Object_Id" />
+    </Key>
+    <Property Name="Object_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Object_Library_Id" Type="int" />
+    <Property Name="Place_Id" Type="int" />
+    <Property Name="Amount" Type="int" />
+    <Property Name="Variaton_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="Object_Document">
+    <Key>
+      <PropertyRef Name="Object_Document_Id" />
+    </Key>
+    <Property Name="Object_Document_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Object_Id" Type="int" />
+    <Property Name="Document_Id" Type="int" />
+    <Property Name="Specialized_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="Object_Document_Parameter">
+    <Key>
+      <PropertyRef Name="Object_Document_Parameter" />
+    </Key>
+    <Property Name="Object_Document_Parameter" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Object_Document_Id" Type="int" />
+    <Property Name="Parameter_Id" Type="int" />
+    <Property Name="Type" Type="int" />
+  </EntityType>
+  <EntityType Name="Object_Library">
+    <Key>
+      <PropertyRef Name="Object_Library_Id" />
+    </Key>
+    <Property Name="Object_Library_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Object_Library_Name" Type="nchar" MaxLength="100" />
+    <Property Name="Object_KKS" Type="nchar" MaxLength="50" />
+    <Property Name="Parent_Object_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="Object_Object">
+    <Key>
+      <PropertyRef Name="Object_Object_Id" />
+    </Key>
+    <Property Name="In_Object_Id" Type="int" />
+    <Property Name="Out_Object_Id" Type="int" />
+    <Property Name="Object_Object_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Object_Speciality">
+    <Key>
+      <PropertyRef Name="Object_Speciality_Id" />
+    </Key>
+    <Property Name="Object_Speciality_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Object_Document_Id" Type="int" />
+    <Property Name="Speciality_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="Parameter">
+    <Key>
+      <PropertyRef Name="Parameter_Id" />
+    </Key>
+    <Property Name="Parameter_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Parameter_Name" Type="nchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Parameter_Parameter">
+    <Key>
+      <PropertyRef Name="Parameter_Parameter_Id" />
+    </Key>
+    <Property Name="Parameter_Parameter_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Parameter_First" Type="int" />
+    <Property Name="Parameter_Second" Type="int" />
+  </EntityType>
+  <EntityType Name="Place">
+    <Key>
+      <PropertyRef Name="Place_Id" />
+    </Key>
+    <Property Name="Place_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Place_Name" Type="nchar" MaxLength="50" />
+    <Property Name="Parent_Place_Id" Type="int" />
+    <Property Name="Place_KKS" Type="nchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Specialty">
+    <Key>
+      <PropertyRef Name="Specialty_Id" />
+    </Key>
+    <Property Name="Specialty_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Specialty_Name" Type="nchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Station">
+    <Key>
+      <PropertyRef Name="Station_Id" />
+    </Key>
+    <Property Name="Station_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Station_Name" Type="nchar" MaxLength="50" />
+    <Property Name="Station_KKS" Type="nchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Station_Object">
+    <Key>
+      <PropertyRef Name="Station_Object_Id" />
+    </Key>
+    <Property Name="Station_Object_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Station_Id" Type="int" />
+    <Property Name="Object_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="Station_User">
+    <Key>
+      <PropertyRef Name="Station_User_Id" />
+    </Key>
+    <Property Name="Station_User_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Station_id" Type="int" />
+    <Property Name="User_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="User_Id" />
+    </Key>
+    <Property Name="User_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Login" Type="nchar" MaxLength="50" />
+    <Property Name="Password" Type="nchar" MaxLength="50" />
+    <Property Name="Type" Type="int" />
+  </EntityType>
+  <EntityType Name="Variation">
+    <Key>
+      <PropertyRef Name="Variation_Id" />
+    </Key>
+    <Property Name="Variation_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Variation_Name" Type="nchar" MaxLength="50" />
+    <Property Name="Place_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="Variation_Object">
+    <Key>
+      <PropertyRef Name="Variation_Object_Id" />
+    </Key>
+    <Property Name="Variation_Object_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Object_Id" Type="int" />
+    <Property Name="Variation_Id" Type="int" />
+  </EntityType>
+  <!--Ошибки, обнаруженные при создании:
+предупреждение 6013: Первичный ключ в таблице или представлении "ZEP.dbo.Old" не определен, его не удалось вывести. Эта таблица или представление исключены. Чтобы использовать сущность, необходимо проверить схему, добавить правильные ключи и раскомментировать ее.
+        <EntityType Name="Old">
+          <Property Name="Parameter_Name" Type="nchar" MaxLength="50" />
+          <Property Name="Type" Type="int" />
+          <Property Name="Document_Name" Type="nchar" MaxLength="50" />
+          <Property Name="Object_Name" Type="nchar" MaxLength="100" />
+        </EntityType>-->
+  <!--Ошибки, обнаруженные при создании:
+предупреждение 6013: Первичный ключ в таблице или представлении "ZEP.dbo.Форма представления,объект, параметр" не определен, его не удалось вывести. Эта таблица или представление исключены. Чтобы использовать сущность, необходимо проверить схему, добавить правильные ключи и раскомментировать ее.
+        <EntityType Name="Форма представления,объект, параметр">
+          <Property Name="Document_Name" Type="nchar" MaxLength="50" />
+          <Property Name="Object_Library_Name" Type="nchar" MaxLength="100" />
+          <Property Name="Parameter_Name" Type="nchar" MaxLength="50" />
+          <Property Name="Type" Type="int" />
+        </EntityType>-->
+  <Association Name="FK_Department_Object_Department">
+    <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
+    <End Role="Department_Object" Type="Self.Department_Object" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="Department_Id" />
+      </Principal>
+      <Dependent Role="Department_Object">
+        <PropertyRef Name="Department_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Department_Object_Object">
+    <End Role="Object" Type="Self.Object" Multiplicity="0..1" />
+    <End Role="Department_Object" Type="Self.Department_Object" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Object">
+        <PropertyRef Name="Object_Id" />
+      </Principal>
+      <Dependent Role="Department_Object">
+        <PropertyRef Name="Object_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Department_User_Department">
+    <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
+    <End Role="Department_User" Type="Self.Department_User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="Department_Id" />
+      </Principal>
+      <Dependent Role="Department_User">
+        <PropertyRef Name="Deprtment_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Department_User_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Department_User" Type="Self.Department_User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="User_Id" />
+      </Principal>
+      <Dependent Role="Department_User">
+        <PropertyRef Name="User_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Object_Document_Document">
+    <End Role="Document" Type="Self.Document" Multiplicity="0..1" />
+    <End Role="Object_Document" Type="Self.Object_Document" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Document">
+        <PropertyRef Name="Document_Id" />
+      </Principal>
+      <Dependent Role="Object_Document">
+        <PropertyRef Name="Document_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Object_Document_Object">
+    <End Role="Object" Type="Self.Object" Multiplicity="0..1" />
+    <End Role="Object_Document" Type="Self.Object_Document" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Object">
+        <PropertyRef Name="Object_Id" />
+      </Principal>
+      <Dependent Role="Object_Document">
+        <PropertyRef Name="Object_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Object_Document_Parameter_Object_Document">
+    <End Role="Object_Document" Type="Self.Object_Document" Multiplicity="0..1" />
+    <End Role="Object_Document_Parameter" Type="Self.Object_Document_Parameter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Object_Document">
+        <PropertyRef Name="Object_Document_Id" />
+      </Principal>
+      <Dependent Role="Object_Document_Parameter">
+        <PropertyRef Name="Object_Document_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Object_Document_Parameter_Paramater">
+    <End Role="Parameter" Type="Self.Parameter" Multiplicity="0..1" />
+    <End Role="Object_Document_Parameter" Type="Self.Object_Document_Parameter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Parameter">
+        <PropertyRef Name="Parameter_Id" />
+      </Principal>
+      <Dependent Role="Object_Document_Parameter">
+        <PropertyRef Name="Parameter_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Object_Library_Object_Library">
+    <End Role="Object_Library" Type="Self.Object_Library" Multiplicity="0..1" />
+    <End Role="Object_Library1" Type="Self.Object_Library" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Object_Library">
+        <PropertyRef Name="Object_Library_Id" />
+      </Principal>
+      <Dependent Role="Object_Library1">
+        <PropertyRef Name="Parent_Object_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Object_Obect_Object">
+    <End Role="Object" Type="Self.Object" Multiplicity="0..1" />
+    <End Role="Object_Object" Type="Self.Object_Object" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Object">
+        <PropertyRef Name="Object_Id" />
+      </Principal>
+      <Dependent Role="Object_Object">
+        <PropertyRef Name="In_Object_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Object_Obect_Object1">
+    <End Role="Object" Type="Self.Object" Multiplicity="0..1" />
+    <End Role="Object_Object" Type="Self.Object_Object" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Object">
+        <PropertyRef Name="Object_Id" />
+      </Principal>
+      <Dependent Role="Object_Object">
+        <PropertyRef Name="Out_Object_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Object_Object_Library">
+    <End Role="Object_Library" Type="Self.Object_Library" Multiplicity="0..1" />
+    <End Role="Object" Type="Self.Object" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Object_Library">
+        <PropertyRef Name="Object_Library_Id" />
+      </Principal>
+      <Dependent Role="Object">
+        <PropertyRef Name="Object_Library_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Object_Place">
+    <End Role="Place" Type="Self.Place" Multiplicity="0..1" />
+    <End Role="Object" Type="Self.Object" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Place">
+        <PropertyRef Name="Place_Id" />
+      </Principal>
+      <Dependent Role="Object">
+        <PropertyRef Name="Place_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Object_Speciality_Object_Document">
+    <End Role="Object_Document" Type="Self.Object_Document" Multiplicity="0..1" />
+    <End Role="Object_Speciality" Type="Self.Object_Speciality" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Object_Document">
+        <PropertyRef Name="Object_Document_Id" />
+      </Principal>
+      <Dependent Role="Object_Speciality">
+        <PropertyRef Name="Object_Document_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Object_Speciality_Specialty">
+    <End Role="Specialty" Type="Self.Specialty" Multiplicity="0..1" />
+    <End Role="Object_Speciality" Type="Self.Object_Speciality" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Specialty">
+        <PropertyRef Name="Specialty_Id" />
+      </Principal>
+      <Dependent Role="Object_Speciality">
+        <PropertyRef Name="Speciality_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Object_Variation">
+    <End Role="Variation" Type="Self.Variation" Multiplicity="0..1" />
+    <End Role="Object" Type="Self.Object" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Variation">
+        <PropertyRef Name="Variation_Id" />
+      </Principal>
+      <Dependent Role="Object">
+        <PropertyRef Name="Variaton_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Parameter_Parameter_Paramater">
+    <End Role="Parameter" Type="Self.Parameter" Multiplicity="0..1" />
+    <End Role="Parameter_Parameter" Type="Self.Parameter_Parameter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Parameter">
+        <PropertyRef Name="Parameter_Id" />
+      </Principal>
+      <Dependent Role="Parameter_Parameter">
+        <PropertyRef Name="Parameter_First" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Parameter_Parameter_Paramater1">
+    <End Role="Parameter" Type="Self.Parameter" Multiplicity="0..1" />
+    <End Role="Parameter_Parameter" Type="Self.Parameter_Parameter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Parameter">
+        <PropertyRef Name="Parameter_Id" />
+      </Principal>
+      <Dependent Role="Parameter_Parameter">
+        <PropertyRef Name="Parameter_Second" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Place_Place">
+    <End Role="Place" Type="Self.Place" Multiplicity="0..1" />
+    <End Role="Place1" Type="Self.Place" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Place">
+        <PropertyRef Name="Place_Id" />
+      </Principal>
+      <Dependent Role="Place1">
+        <PropertyRef Name="Parent_Place_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Station_Object_Object">
+    <End Role="Object" Type="Self.Object" Multiplicity="0..1" />
+    <End Role="Station_Object" Type="Self.Station_Object" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Object">
+        <PropertyRef Name="Object_Id" />
+      </Principal>
+      <Dependent Role="Station_Object">
+        <PropertyRef Name="Object_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Station_Object_Project_Station">
+    <End Role="Station" Type="Self.Station" Multiplicity="0..1" />
+    <End Role="Station_Object" Type="Self.Station_Object" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Station">
+        <PropertyRef Name="Station_Id" />
+      </Principal>
+      <Dependent Role="Station_Object">
+        <PropertyRef Name="Station_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Station_User_Station">
+    <End Role="Station" Type="Self.Station" Multiplicity="0..1" />
+    <End Role="Station_User" Type="Self.Station_User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Station">
+        <PropertyRef Name="Station_Id" />
+      </Principal>
+      <Dependent Role="Station_User">
+        <PropertyRef Name="Station_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Station_User_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Station_User" Type="Self.Station_User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="User_Id" />
+      </Principal>
+      <Dependent Role="Station_User">
+        <PropertyRef Name="User_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Variation_Object_Object_Library">
+    <End Role="Object_Library" Type="Self.Object_Library" Multiplicity="0..1" />
+    <End Role="Variation_Object" Type="Self.Variation_Object" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Object_Library">
+        <PropertyRef Name="Object_Library_Id" />
+      </Principal>
+      <Dependent Role="Variation_Object">
+        <PropertyRef Name="Object_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Variation_Object_Variation1">
+    <End Role="Variation" Type="Self.Variation" Multiplicity="0..1" />
+    <End Role="Variation_Object" Type="Self.Variation_Object" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Variation">
+        <PropertyRef Name="Variation_Id" />
+      </Principal>
+      <Dependent Role="Variation_Object">
+        <PropertyRef Name="Variation_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище ZEPModelContainer">
+    <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Department_Object" EntityType="Self.Department_Object" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Department_User" EntityType="Self.Department_User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Document" EntityType="Self.Document" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Object" EntityType="Self.Object" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Object_Document" EntityType="Self.Object_Document" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Object_Document_Parameter" EntityType="Self.Object_Document_Parameter" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Object_Library" EntityType="Self.Object_Library" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Object_Object" EntityType="Self.Object_Object" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Object_Speciality" EntityType="Self.Object_Speciality" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Parameter" EntityType="Self.Parameter" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Parameter_Parameter" EntityType="Self.Parameter_Parameter" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Place" EntityType="Self.Place" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Specialty" EntityType="Self.Specialty" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Station" EntityType="Self.Station" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Station_Object" EntityType="Self.Station_Object" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Station_User" EntityType="Self.Station_User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Variation" EntityType="Self.Variation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Variation_Object" EntityType="Self.Variation_Object" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Department_Object_Department" Association="Self.FK_Department_Object_Department">
+      <End Role="Department" EntitySet="Department" />
+      <End Role="Department_Object" EntitySet="Department_Object" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Department_Object_Object" Association="Self.FK_Department_Object_Object">
+      <End Role="Object" EntitySet="Object" />
+      <End Role="Department_Object" EntitySet="Department_Object" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Department_User_Department" Association="Self.FK_Department_User_Department">
+      <End Role="Department" EntitySet="Department" />
+      <End Role="Department_User" EntitySet="Department_User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Department_User_User" Association="Self.FK_Department_User_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Department_User" EntitySet="Department_User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Object_Document_Document" Association="Self.FK_Object_Document_Document">
+      <End Role="Document" EntitySet="Document" />
+      <End Role="Object_Document" EntitySet="Object_Document" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Object_Document_Object" Association="Self.FK_Object_Document_Object">
+      <End Role="Object" EntitySet="Object" />
+      <End Role="Object_Document" EntitySet="Object_Document" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Object_Document_Parameter_Object_Document" Association="Self.FK_Object_Document_Parameter_Object_Document">
+      <End Role="Object_Document" EntitySet="Object_Document" />
+      <End Role="Object_Document_Parameter" EntitySet="Object_Document_Parameter" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Object_Document_Parameter_Paramater" Association="Self.FK_Object_Document_Parameter_Paramater">
+      <End Role="Parameter" EntitySet="Parameter" />
+      <End Role="Object_Document_Parameter" EntitySet="Object_Document_Parameter" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Object_Library_Object_Library" Association="Self.FK_Object_Library_Object_Library">
+      <End Role="Object_Library" EntitySet="Object_Library" />
+      <End Role="Object_Library1" EntitySet="Object_Library" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Object_Obect_Object" Association="Self.FK_Object_Obect_Object">
+      <End Role="Object" EntitySet="Object" />
+      <End Role="Object_Object" EntitySet="Object_Object" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Object_Obect_Object1" Association="Self.FK_Object_Obect_Object1">
+      <End Role="Object" EntitySet="Object" />
+      <End Role="Object_Object" EntitySet="Object_Object" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Object_Object_Library" Association="Self.FK_Object_Object_Library">
+      <End Role="Object_Library" EntitySet="Object_Library" />
+      <End Role="Object" EntitySet="Object" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Object_Place" Association="Self.FK_Object_Place">
+      <End Role="Place" EntitySet="Place" />
+      <End Role="Object" EntitySet="Object" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Object_Speciality_Object_Document" Association="Self.FK_Object_Speciality_Object_Document">
+      <End Role="Object_Document" EntitySet="Object_Document" />
+      <End Role="Object_Speciality" EntitySet="Object_Speciality" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Object_Speciality_Specialty" Association="Self.FK_Object_Speciality_Specialty">
+      <End Role="Specialty" EntitySet="Specialty" />
+      <End Role="Object_Speciality" EntitySet="Object_Speciality" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Object_Variation" Association="Self.FK_Object_Variation">
+      <End Role="Variation" EntitySet="Variation" />
+      <End Role="Object" EntitySet="Object" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Parameter_Parameter_Paramater" Association="Self.FK_Parameter_Parameter_Paramater">
+      <End Role="Parameter" EntitySet="Parameter" />
+      <End Role="Parameter_Parameter" EntitySet="Parameter_Parameter" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Parameter_Parameter_Paramater1" Association="Self.FK_Parameter_Parameter_Paramater1">
+      <End Role="Parameter" EntitySet="Parameter" />
+      <End Role="Parameter_Parameter" EntitySet="Parameter_Parameter" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Place_Place" Association="Self.FK_Place_Place">
+      <End Role="Place" EntitySet="Place" />
+      <End Role="Place1" EntitySet="Place" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Station_Object_Object" Association="Self.FK_Station_Object_Object">
+      <End Role="Object" EntitySet="Object" />
+      <End Role="Station_Object" EntitySet="Station_Object" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Station_Object_Project_Station" Association="Self.FK_Station_Object_Project_Station">
+      <End Role="Station" EntitySet="Station" />
+      <End Role="Station_Object" EntitySet="Station_Object" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Station_User_Station" Association="Self.FK_Station_User_Station">
+      <End Role="Station" EntitySet="Station" />
+      <End Role="Station_User" EntitySet="Station_User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Station_User_User" Association="Self.FK_Station_User_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Station_User" EntitySet="Station_User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Variation_Object_Object_Library" Association="Self.FK_Variation_Object_Object_Library">
+      <End Role="Object_Library" EntitySet="Object_Library" />
+      <End Role="Variation_Object" EntitySet="Variation_Object" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Variation_Object_Variation1" Association="Self.FK_Variation_Object_Variation1">
+      <End Role="Variation" EntitySet="Variation" />
+      <End Role="Variation_Object" EntitySet="Variation_Object" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

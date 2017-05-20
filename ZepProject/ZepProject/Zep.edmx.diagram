@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="68ce6dca2d99432cb053429a770bdfa6" Name="Diagram1" ZoomLevel="34">
+        <EntityTypeShape EntityType="ZEPModel.Department" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZEPModel.Department_Object" Width="1.5" PointX="5.25" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZEPModel.Department_User" Width="1.5" PointX="11" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZEPModel.Document" Width="1.5" PointX="3" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZEPModel.Object" Width="1.5" PointX="3" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZEPModel.Object_Document" Width="1.5" PointX="5.25" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZEPModel.Object_Document_Parameter" Width="1.5" PointX="7.5" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZEPModel.Object_Library" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZEPModel.Object_Object" Width="1.5" PointX="5.25" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZEPModel.Object_Speciality" Width="1.5" PointX="7.5" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZEPModel.Parameter" Width="1.5" PointX="5.25" PointY="17.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZEPModel.Parameter_Parameter" Width="1.5" PointX="7.5" PointY="17.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZEPModel.Place" Width="1.5" PointX="0.75" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZEPModel.Specialty" Width="1.5" PointX="5.25" PointY="21" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZEPModel.Station" Width="1.5" PointX="6" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZEPModel.Station_Object" Width="1.5" PointX="8.25" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZEPModel.Station_User" Width="1.5" PointX="11" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZEPModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZEPModel.User" Width="1.5" PointX="8.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZEPModel.Variation" Width="1.5" PointX="0.75" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ZEPModel.Variation_Object" Width="1.5" PointX="6" PointY="8.875" IsExpanded="true" />
+        <AssociationConnector Association="ZEPModel.FK_Department_Object_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="ZEPModel.FK_Department_User_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="ZEPModel.FK_Department_Object_Object" ManuallyRouted="false" />
+        <AssociationConnector Association="ZEPModel.FK_Department_User_User" ManuallyRouted="false" />
+        <AssociationConnector Association="ZEPModel.FK_Object_Document_Document" ManuallyRouted="false" />
+        <AssociationConnector Association="ZEPModel.FK_Object_Document_Object" ManuallyRouted="false" />
+        <AssociationConnector Association="ZEPModel.FK_Object_Obect_Object" ManuallyRouted="false" />
+        <AssociationConnector Association="ZEPModel.FK_Object_Obect_Object1" ManuallyRouted="false" />
+        <AssociationConnector Association="ZEPModel.FK_Object_Object_Library" ManuallyRouted="false" />
+        <AssociationConnector Association="ZEPModel.FK_Object_Place" ManuallyRouted="false" />
+        <AssociationConnector Association="ZEPModel.FK_Object_Variation" ManuallyRouted="false" />
+        <AssociationConnector Association="ZEPModel.FK_Station_Object_Object" ManuallyRouted="false" />
+        <AssociationConnector Association="ZEPModel.FK_Object_Document_Parameter_Object_Document" ManuallyRouted="false" />
+        <AssociationConnector Association="ZEPModel.FK_Object_Speciality_Object_Document" ManuallyRouted="false" />
+        <AssociationConnector Association="ZEPModel.FK_Object_Document_Parameter_Paramater" ManuallyRouted="false" />
+        <AssociationConnector Association="ZEPModel.FK_Object_Library_Object_Library" ManuallyRouted="false" />
+        <AssociationConnector Association="ZEPModel.FK_Variation_Object_Object_Library" ManuallyRouted="false" />
+        <AssociationConnector Association="ZEPModel.FK_Object_Speciality_Specialty" ManuallyRouted="false" />
+        <AssociationConnector Association="ZEPModel.FK_Parameter_Parameter_Paramater" ManuallyRouted="false" />
+        <AssociationConnector Association="ZEPModel.FK_Parameter_Parameter_Paramater1" ManuallyRouted="false" />
+        <AssociationConnector Association="ZEPModel.FK_Place_Place" ManuallyRouted="false" />
+        <AssociationConnector Association="ZEPModel.FK_Station_Object_Project_Station" ManuallyRouted="false" />
+        <AssociationConnector Association="ZEPModel.FK_Station_User_Station" ManuallyRouted="false" />
+        <AssociationConnector Association="ZEPModel.FK_Station_User_User" ManuallyRouted="false" />
+        <AssociationConnector Association="ZEPModel.FK_Variation_Object_Variation1" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

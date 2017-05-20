@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище ZEPModelContainer" CdmEntityContainer="ZEPEntities">
+    <EntitySetMapping Name="Department">
+      <EntityTypeMapping TypeName="ZEPModel.Department">
+        <MappingFragment StoreEntitySet="Department">
+          <ScalarProperty Name="Department_Id" ColumnName="Department_Id" />
+          <ScalarProperty Name="Department_Name" ColumnName="Department_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Department_Object">
+      <EntityTypeMapping TypeName="ZEPModel.Department_Object">
+        <MappingFragment StoreEntitySet="Department_Object">
+          <ScalarProperty Name="Department_Id" ColumnName="Department_Id" />
+          <ScalarProperty Name="Object_Id" ColumnName="Object_Id" />
+          <ScalarProperty Name="Department_Object_Id" ColumnName="Department_Object_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Department_User">
+      <EntityTypeMapping TypeName="ZEPModel.Department_User">
+        <MappingFragment StoreEntitySet="Department_User">
+          <ScalarProperty Name="Deprtment_Id" ColumnName="Deprtment_Id" />
+          <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+          <ScalarProperty Name="Department_User_Id" ColumnName="Department_User_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Document">
+      <EntityTypeMapping TypeName="ZEPModel.Document">
+        <MappingFragment StoreEntitySet="Document">
+          <ScalarProperty Name="Document_Id" ColumnName="Document_Id" />
+          <ScalarProperty Name="Document_Name" ColumnName="Document_Name" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Object">
+      <EntityTypeMapping TypeName="ZEPModel.Object">
+        <MappingFragment StoreEntitySet="Object">
+          <ScalarProperty Name="Object_Id" ColumnName="Object_Id" />
+          <ScalarProperty Name="Object_Library_Id" ColumnName="Object_Library_Id" />
+          <ScalarProperty Name="Place_Id" ColumnName="Place_Id" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Variaton_Id" ColumnName="Variaton_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Object_Document">
+      <EntityTypeMapping TypeName="ZEPModel.Object_Document">
+        <MappingFragment StoreEntitySet="Object_Document">
+          <ScalarProperty Name="Object_Document_Id" ColumnName="Object_Document_Id" />
+          <ScalarProperty Name="Object_Id" ColumnName="Object_Id" />
+          <ScalarProperty Name="Document_Id" ColumnName="Document_Id" />
+          <ScalarProperty Name="Specialized_Id" ColumnName="Specialized_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Object_Document_Parameter">
+      <EntityTypeMapping TypeName="ZEPModel.Object_Document_Parameter">
+        <MappingFragment StoreEntitySet="Object_Document_Parameter">
+          <ScalarProperty Name="Object_Document_Parameter1" ColumnName="Object_Document_Parameter" />
+          <ScalarProperty Name="Object_Document_Id" ColumnName="Object_Document_Id" />
+          <ScalarProperty Name="Parameter_Id" ColumnName="Parameter_Id" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Object_Library">
+      <EntityTypeMapping TypeName="ZEPModel.Object_Library">
+        <MappingFragment StoreEntitySet="Object_Library">
+          <ScalarProperty Name="Object_Library_Id" ColumnName="Object_Library_Id" />
+          <ScalarProperty Name="Object_Library_Name" ColumnName="Object_Library_Name" />
+          <ScalarProperty Name="Object_KKS" ColumnName="Object_KKS" />
+          <ScalarProperty Name="Parent_Object_Id" ColumnName="Parent_Object_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Object_Object">
+      <EntityTypeMapping TypeName="ZEPModel.Object_Object">
+        <MappingFragment StoreEntitySet="Object_Object">
+          <ScalarProperty Name="In_Object_Id" ColumnName="In_Object_Id" />
+          <ScalarProperty Name="Out_Object_Id" ColumnName="Out_Object_Id" />
+          <ScalarProperty Name="Object_Object_Id" ColumnName="Object_Object_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Object_Speciality">
+      <EntityTypeMapping TypeName="ZEPModel.Object_Speciality">
+        <MappingFragment StoreEntitySet="Object_Speciality">
+          <ScalarProperty Name="Object_Speciality_Id" ColumnName="Object_Speciality_Id" />
+          <ScalarProperty Name="Object_Document_Id" ColumnName="Object_Document_Id" />
+          <ScalarProperty Name="Speciality_Id" ColumnName="Speciality_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Parameter">
+      <EntityTypeMapping TypeName="ZEPModel.Parameter">
+        <MappingFragment StoreEntitySet="Parameter">
+          <ScalarProperty Name="Parameter_Id" ColumnName="Parameter_Id" />
+          <ScalarProperty Name="Parameter_Name" ColumnName="Parameter_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Parameter_Parameter">
+      <EntityTypeMapping TypeName="ZEPModel.Parameter_Parameter">
+        <MappingFragment StoreEntitySet="Parameter_Parameter">
+          <ScalarProperty Name="Parameter_Parameter_Id" ColumnName="Parameter_Parameter_Id" />
+          <ScalarProperty Name="Parameter_First" ColumnName="Parameter_First" />
+          <ScalarProperty Name="Parameter_Second" ColumnName="Parameter_Second" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Place">
+      <EntityTypeMapping TypeName="ZEPModel.Place">
+        <MappingFragment StoreEntitySet="Place">
+          <ScalarProperty Name="Place_Id" ColumnName="Place_Id" />
+          <ScalarProperty Name="Place_Name" ColumnName="Place_Name" />
+          <ScalarProperty Name="Parent_Place_Id" ColumnName="Parent_Place_Id" />
+          <ScalarProperty Name="Place_KKS" ColumnName="Place_KKS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Specialty">
+      <EntityTypeMapping TypeName="ZEPModel.Specialty">
+        <MappingFragment StoreEntitySet="Specialty">
+          <ScalarProperty Name="Specialty_Id" ColumnName="Specialty_Id" />
+          <ScalarProperty Name="Specialty_Name" ColumnName="Specialty_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Station">
+      <EntityTypeMapping TypeName="ZEPModel.Station">
+        <MappingFragment StoreEntitySet="Station">
+          <ScalarProperty Name="Station_Id" ColumnName="Station_Id" />
+          <ScalarProperty Name="Station_Name" ColumnName="Station_Name" />
+          <ScalarProperty Name="Station_KKS" ColumnName="Station_KKS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Station_Object">
+      <EntityTypeMapping TypeName="ZEPModel.Station_Object">
+        <MappingFragment StoreEntitySet="Station_Object">
+          <ScalarProperty Name="Station_Object_Id" ColumnName="Station_Object_Id" />
+          <ScalarProperty Name="Station_Id" ColumnName="Station_Id" />
+          <ScalarProperty Name="Object_Id" ColumnName="Object_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Station_User">
+      <EntityTypeMapping TypeName="ZEPModel.Station_User">
+        <MappingFragment StoreEntitySet="Station_User">
+          <ScalarProperty Name="Station_User_Id" ColumnName="Station_User_Id" />
+          <ScalarProperty Name="Station_id" ColumnName="Station_id" />
+          <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="ZEPModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User">
+      <EntityTypeMapping TypeName="ZEPModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Variation">
+      <EntityTypeMapping TypeName="ZEPModel.Variation">
+        <MappingFragment StoreEntitySet="Variation">
+          <ScalarProperty Name="Variation_Id" ColumnName="Variation_Id" />
+          <ScalarProperty Name="Variation_Name" ColumnName="Variation_Name" />
+          <ScalarProperty Name="Place_Id" ColumnName="Place_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Variation_Object">
+      <EntityTypeMapping TypeName="ZEPModel.Variation_Object">
+        <MappingFragment StoreEntitySet="Variation_Object">
+          <ScalarProperty Name="Variation_Object_Id" ColumnName="Variation_Object_Id" />
+          <ScalarProperty Name="Object_Id" ColumnName="Object_Id" />
+          <ScalarProperty Name="Variation_Id" ColumnName="Variation_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
