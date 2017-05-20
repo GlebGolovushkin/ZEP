@@ -127,6 +127,7 @@
         <MappingFragment StoreEntitySet="Specialty">
           <ScalarProperty Name="Specialty_Id" ColumnName="Specialty_Id" />
           <ScalarProperty Name="Specialty_Name" ColumnName="Specialty_Name" />
+          <ScalarProperty Name="Specialty_Code" ColumnName="Specialty_Code" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -12,3 +12,21 @@ C:\Users\Танька\documents\visual studio 2015\Projects\ZepProject\ZepProjec
 C:\Users\Танька\documents\visual studio 2015\Projects\ZepProject\ZepProject\obj\Debug\ZepProject.exe
 C:\Users\Танька\documents\visual studio 2015\Projects\ZepProject\ZepProject\obj\Debug\ZepProject.pdb
 C:\Users\Танька\documents\visual studio 2015\Projects\ZepProject\ZepProject\obj\Debug\ZepProject.DbUpdating.resources
+C:\Projects\Zep\ZepProject\ZepProject\bin\Debug\ZepProject.exe.config
+C:\Projects\Zep\ZepProject\ZepProject\obj\Debug\ZepProject.exe
+C:\Projects\Zep\ZepProject\ZepProject\obj\Debug\ZepProject.pdb
+C:\Projects\Zep\ZepProject\ZepProject\bin\Debug\ZepProject.exe
+C:\Projects\Zep\ZepProject\ZepProject\bin\Debug\ZepProject.pdb
+C:\Projects\Zep\ZepProject\ZepProject\bin\Debug\EntityFramework.dll
+C:\Projects\Zep\ZepProject\ZepProject\bin\Debug\EntityFramework.SqlServer.dll
+C:\Projects\Zep\ZepProject\ZepProject\bin\Debug\EntityFramework.xml
+C:\Projects\Zep\ZepProject\ZepProject\bin\Debug\EntityFramework.SqlServer.xml
+C:\Projects\Zep\ZepProject\ZepProject\obj\Debug\ZepProject.csprojResolveAssemblyReference.cache
+C:\Projects\Zep\ZepProject\ZepProject\obj\Debug\ZepProject.DbUpdating.resources
+C:\Projects\Zep\ZepProject\ZepProject\obj\Debug\ZepProject.DbUpdating2.resources
+C:\Projects\Zep\ZepProject\ZepProject\obj\Debug\ZepProject.DbUpdating3.resources
+C:\Projects\Zep\ZepProject\ZepProject\obj\Debug\ZepProject.LogIn.resources
+C:\Projects\Zep\ZepProject\ZepProject\obj\Debug\ZepProject.Properties.Resources.resources
+C:\Projects\Zep\ZepProject\ZepProject\obj\Debug\ZepProject.StartingForm.resources
+C:\Projects\Zep\ZepProject\ZepProject\obj\Debug\ZepProject.StsrtingForm2.resources
+C:\Projects\Zep\ZepProject\ZepProject\obj\Debug\ZepProject.csproj.GenerateResource.Cache

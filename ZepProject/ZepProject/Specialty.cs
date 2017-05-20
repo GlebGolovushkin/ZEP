@@ -22,6 +22,7 @@ namespace ZepProject
     
         public int Specialty_Id { get; set; }
         public string Specialty_Name { get; set; }
+        public string Specialty_Code { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Object_Speciality> Object_Speciality { get; set; }

@@ -151,6 +151,7 @@
     </Key>
     <Property Name="Specialty_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Specialty_Name" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="Specialty_Code" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
     <NavigationProperty Name="Object_Speciality" Relationship="Self.FK_Object_Speciality_Specialty" FromRole="Specialty" ToRole="Object_Speciality" />
   </EntityType>
   <EntityType Name="Station">

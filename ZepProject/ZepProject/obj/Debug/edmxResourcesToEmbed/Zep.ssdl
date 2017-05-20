@@ -114,6 +114,7 @@
     </Key>
     <Property Name="Specialty_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Specialty_Name" Type="nchar" MaxLength="50" />
+    <Property Name="Specialty_Code" Type="nchar" MaxLength="10" />
   </EntityType>
   <EntityType Name="Station">
     <Key>
