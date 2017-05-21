@@ -17,7 +17,7 @@ namespace ZepProject
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Specialty()
         {
-            this.Object_Speciality = new HashSet<Object_Speciality>();
+            this.Document_Specialty = new HashSet<Document_Specialty>();
         }
     
         public int Specialty_Id { get; set; }
@@ -25,6 +25,6 @@ namespace ZepProject
         public string Specialty_Code { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Object_Speciality> Object_Speciality { get; set; }
+        public virtual ICollection<Document_Specialty> Document_Specialty { get; set; }
     }
 }

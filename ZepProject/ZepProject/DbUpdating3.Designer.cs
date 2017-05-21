@@ -32,27 +32,27 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.objectLibraryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.zEPDataSet9 = new ZepProject.ZEPDataSet9();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.placeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.zEPDataSet11 = new ZepProject.ZEPDataSet11();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.zEPDataSet9 = new ZepProject.ZEPDataSet9();
-            this.objectLibraryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.object_LibraryTableAdapter = new ZepProject.ZEPDataSet9TableAdapters.Object_LibraryTableAdapter();
             this.zEPDataSet10 = new ZepProject.ZEPDataSet10();
             this.variationBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.variationTableAdapter = new ZepProject.ZEPDataSet10TableAdapters.VariationTableAdapter();
-            this.zEPDataSet11 = new ZepProject.ZEPDataSet11();
-            this.placeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.placeTableAdapter = new ZepProject.ZEPDataSet11TableAdapters.PlaceTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.zEPDataSet9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.objectLibraryBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zEPDataSet9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.placeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zEPDataSet11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.zEPDataSet10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.variationBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.zEPDataSet11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.placeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -84,6 +84,17 @@
             this.comboBox1.Size = new System.Drawing.Size(147, 21);
             this.comboBox1.TabIndex = 2;
             this.comboBox1.ValueMember = "Object_Library_Name";
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.SetVariations);
+            // 
+            // objectLibraryBindingSource
+            // 
+            this.objectLibraryBindingSource.DataMember = "Object_Library";
+            this.objectLibraryBindingSource.DataSource = this.zEPDataSet9;
+            // 
+            // zEPDataSet9
+            // 
+            this.zEPDataSet9.DataSetName = "ZEPDataSet9";
+            this.zEPDataSet9.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label2
             // 
@@ -101,6 +112,7 @@
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(147, 21);
             this.comboBox2.TabIndex = 2;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.SetVariations);
             // 
             // label3
             // 
@@ -122,6 +134,16 @@
             this.comboBox4.TabIndex = 2;
             this.comboBox4.ValueMember = "Place_Name";
             // 
+            // placeBindingSource
+            // 
+            this.placeBindingSource.DataMember = "Place";
+            this.placeBindingSource.DataSource = this.zEPDataSet11;
+            // 
+            // zEPDataSet11
+            // 
+            this.zEPDataSet11.DataSetName = "ZEPDataSet11";
+            this.zEPDataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(232, 61);
@@ -137,16 +159,6 @@
             this.label5.Size = new System.Drawing.Size(117, 13);
             this.label5.TabIndex = 1;
             this.label5.Text = "Количество объектов";
-            // 
-            // zEPDataSet9
-            // 
-            this.zEPDataSet9.DataSetName = "ZEPDataSet9";
-            this.zEPDataSet9.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // objectLibraryBindingSource
-            // 
-            this.objectLibraryBindingSource.DataMember = "Object_Library";
-            this.objectLibraryBindingSource.DataSource = this.zEPDataSet9;
             // 
             // object_LibraryTableAdapter
             // 
@@ -165,16 +177,6 @@
             // variationTableAdapter
             // 
             this.variationTableAdapter.ClearBeforeFill = true;
-            // 
-            // zEPDataSet11
-            // 
-            this.zEPDataSet11.DataSetName = "ZEPDataSet11";
-            this.zEPDataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // placeBindingSource
-            // 
-            this.placeBindingSource.DataMember = "Place";
-            this.placeBindingSource.DataSource = this.zEPDataSet11;
             // 
             // placeTableAdapter
             // 
@@ -197,12 +199,12 @@
             this.Name = "DbUpdating3";
             this.Text = "Объект";
             this.Load += new System.EventHandler(this.DbUpdating3_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.zEPDataSet9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.objectLibraryBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zEPDataSet9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.placeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zEPDataSet11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.zEPDataSet10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.variationBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.zEPDataSet11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.placeBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

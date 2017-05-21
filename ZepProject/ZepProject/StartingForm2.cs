@@ -15,11 +15,24 @@ namespace ZepProject
         public StartingForm2()
         {
             InitializeComponent();
+            foreach (var st in UserData.stations)
+            {
+                comboBox1.Items.Add(st);
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //UserData.station = comboBox1.SelectedItem;
+            var s = UserData.type;
+            var ss = UserData.departments;
+            Admin window = new Admin();
+            window.ShowDialog();
         }
     }
 }

@@ -28,5 +28,8 @@ C:\Projects\Zep\ZepProject\ZepProject\obj\Debug\ZepProject.DbUpdating3.resources
 C:\Projects\Zep\ZepProject\ZepProject\obj\Debug\ZepProject.LogIn.resources
 C:\Projects\Zep\ZepProject\ZepProject\obj\Debug\ZepProject.Properties.Resources.resources
 C:\Projects\Zep\ZepProject\ZepProject\obj\Debug\ZepProject.StartingForm.resources
-C:\Projects\Zep\ZepProject\ZepProject\obj\Debug\ZepProject.StsrtingForm2.resources
 C:\Projects\Zep\ZepProject\ZepProject\obj\Debug\ZepProject.csproj.GenerateResource.Cache
+C:\Projects\Zep\ZepProject\ZepProject\obj\Debug\ZepProject.Admin.resources
+C:\Projects\Zep\ZepProject\ZepProject\obj\Debug\ZepProject.CreateNewStation.resources
+C:\Projects\Zep\ZepProject\ZepProject\obj\Debug\ZepProject.StartingForm2.resources
+C:\Projects\Zep\ZepProject\ZepProject\obj\Debug\ZepProject.Main.resources

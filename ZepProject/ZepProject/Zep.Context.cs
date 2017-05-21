@@ -29,12 +29,12 @@ namespace ZepProject
         public virtual DbSet<Department_Object> Department_Object { get; set; }
         public virtual DbSet<Department_User> Department_User { get; set; }
         public virtual DbSet<Document> Document { get; set; }
+        public virtual DbSet<Document_Specialty> Document_Specialty { get; set; }
         public virtual DbSet<Object> Object { get; set; }
         public virtual DbSet<Object_Document> Object_Document { get; set; }
         public virtual DbSet<Object_Document_Parameter> Object_Document_Parameter { get; set; }
         public virtual DbSet<Object_Library> Object_Library { get; set; }
         public virtual DbSet<Object_Object> Object_Object { get; set; }
-        public virtual DbSet<Object_Speciality> Object_Speciality { get; set; }
         public virtual DbSet<Parameter> Parameter { get; set; }
         public virtual DbSet<Parameter_Parameter> Parameter_Parameter { get; set; }
         public virtual DbSet<Place> Place { get; set; }

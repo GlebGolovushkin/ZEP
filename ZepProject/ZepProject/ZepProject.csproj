@@ -81,6 +81,12 @@
     <Compile Include="DbUpdating3.Designer.cs">
       <DependentUpon>DbUpdating3.cs</DependentUpon>
     </Compile>
+    <Compile Include="CreateNewStation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateNewStation.Designer.cs">
+      <DependentUpon>CreateNewStation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Department.cs">
       <DependentUpon>Zep.tt</DependentUpon>
     </Compile>
@@ -93,17 +99,20 @@
     <Compile Include="Document.cs">
       <DependentUpon>Zep.tt</DependentUpon>
     </Compile>
-    <Compile Include="CreateNewStation.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CreateNewStation.Designer.cs">
-      <DependentUpon>CreateNewStation.cs</DependentUpon>
+    <Compile Include="Document_Specialty.cs">
+      <DependentUpon>Zep.tt</DependentUpon>
     </Compile>
     <Compile Include="LogIn.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="LogIn.Designer.cs">
       <DependentUpon>LogIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
     </Compile>
     <Compile Include="Object.cs">
       <DependentUpon>Zep.tt</DependentUpon>
@@ -118,9 +127,6 @@
       <DependentUpon>Zep.tt</DependentUpon>
     </Compile>
     <Compile Include="Object_Object.cs">
-      <DependentUpon>Zep.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Object_Speciality.cs">
       <DependentUpon>Zep.tt</DependentUpon>
     </Compile>
     <Compile Include="Parameter.cs">
@@ -143,6 +149,12 @@
     <Compile Include="StartingForm.Designer.cs">
       <DependentUpon>StartingForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="StartingForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StartingForm2.Designer.cs">
+      <DependentUpon>StartingForm2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Station.cs">
       <DependentUpon>Zep.tt</DependentUpon>
     </Compile>
@@ -152,18 +164,13 @@
     <Compile Include="Station_User.cs">
       <DependentUpon>Zep.tt</DependentUpon>
     </Compile>
-    <Compile Include="StartingForm2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="StartingForm2.Designer.cs">
-      <DependentUpon>StartingForm2.cs</DependentUpon>
-    </Compile>
     <Compile Include="sysdiagrams.cs">
       <DependentUpon>Zep.tt</DependentUpon>
     </Compile>
     <Compile Include="User.cs">
       <DependentUpon>Zep.tt</DependentUpon>
     </Compile>
+    <Compile Include="UserData.cs" />
     <Compile Include="Variation.cs">
       <DependentUpon>Zep.tt</DependentUpon>
     </Compile>
@@ -204,6 +211,36 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ZEPDataSet11.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ZEPDataSet12.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ZEPDataSet12.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ZEPDataSet13.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ZEPDataSet13.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ZEPDataSet14.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ZEPDataSet14.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ZEPDataSet15.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ZEPDataSet15.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ZEPDataSet16.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ZEPDataSet16.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ZEPDataSet17.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ZEPDataSet17.xsd</DependentUpon>
     </Compile>
     <Compile Include="ZEPDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -262,6 +299,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -338,6 +378,72 @@
     </None>
     <None Include="ZEPDataSet11.xss">
       <DependentUpon>ZEPDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="ZEPDataSet12.xsc">
+      <DependentUpon>ZEPDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="ZEPDataSet12.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ZEPDataSet12.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ZEPDataSet12.xss">
+      <DependentUpon>ZEPDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="ZEPDataSet13.xsc">
+      <DependentUpon>ZEPDataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="ZEPDataSet13.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ZEPDataSet13.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ZEPDataSet13.xss">
+      <DependentUpon>ZEPDataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="ZEPDataSet14.xsc">
+      <DependentUpon>ZEPDataSet14.xsd</DependentUpon>
+    </None>
+    <None Include="ZEPDataSet14.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ZEPDataSet14.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ZEPDataSet14.xss">
+      <DependentUpon>ZEPDataSet14.xsd</DependentUpon>
+    </None>
+    <None Include="ZEPDataSet15.xsc">
+      <DependentUpon>ZEPDataSet15.xsd</DependentUpon>
+    </None>
+    <None Include="ZEPDataSet15.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ZEPDataSet15.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ZEPDataSet15.xss">
+      <DependentUpon>ZEPDataSet15.xsd</DependentUpon>
+    </None>
+    <None Include="ZEPDataSet16.xsc">
+      <DependentUpon>ZEPDataSet16.xsd</DependentUpon>
+    </None>
+    <None Include="ZEPDataSet16.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ZEPDataSet16.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ZEPDataSet16.xss">
+      <DependentUpon>ZEPDataSet16.xsd</DependentUpon>
+    </None>
+    <None Include="ZEPDataSet17.xsc">
+      <DependentUpon>ZEPDataSet17.xsd</DependentUpon>
+    </None>
+    <None Include="ZEPDataSet17.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ZEPDataSet17.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ZEPDataSet17.xss">
+      <DependentUpon>ZEPDataSet17.xsd</DependentUpon>
     </None>
     <None Include="ZEPDataSet2.xsc">
       <DependentUpon>ZEPDataSet2.xsd</DependentUpon>

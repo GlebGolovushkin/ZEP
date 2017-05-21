@@ -17,7 +17,7 @@ namespace ZepProject
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Document()
         {
-            this.Object_Document = new HashSet<Object_Document>();
+            this.Document_Specialty = new HashSet<Document_Specialty>();
         }
     
         public int Document_Id { get; set; }
@@ -25,6 +25,6 @@ namespace ZepProject
         public Nullable<int> Type { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Object_Document> Object_Document { get; set; }
+        public virtual ICollection<Document_Specialty> Document_Specialty { get; set; }
     }
 }

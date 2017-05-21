@@ -23,7 +23,6 @@ namespace ZepProject
     
         public int Variation_Id { get; set; }
         public string Variation_Name { get; set; }
-        public Nullable<int> Place_Id { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Object> Object { get; set; }

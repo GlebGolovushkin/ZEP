@@ -18,19 +18,15 @@ namespace ZepProject
         public Object_Document()
         {
             this.Object_Document_Parameter = new HashSet<Object_Document_Parameter>();
-            this.Object_Speciality = new HashSet<Object_Speciality>();
         }
     
         public int Object_Document_Id { get; set; }
         public Nullable<int> Object_Id { get; set; }
-        public Nullable<int> Document_Id { get; set; }
-        public Nullable<int> Specialized_Id { get; set; }
+        public Nullable<int> Document_Specialty_Id { get; set; }
     
-        public virtual Document Document { get; set; }
+        public virtual Document_Specialty Document_Specialty { get; set; }
         public virtual Object Object { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Object_Document_Parameter> Object_Document_Parameter { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Object_Speciality> Object_Speciality { get; set; }
     }
 }

@@ -31,6 +31,14 @@
     <Property Name="Document_Name" Type="nchar" MaxLength="50" />
     <Property Name="Type" Type="int" />
   </EntityType>
+  <EntityType Name="Document_Specialty">
+    <Key>
+      <PropertyRef Name="Document_Specialty_Id" />
+    </Key>
+    <Property Name="Document_Specialty_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Document_Id" Type="int" />
+    <Property Name="Specialty_Id" Type="int" />
+  </EntityType>
   <EntityType Name="Object">
     <Key>
       <PropertyRef Name="Object_Id" />
@@ -47,8 +55,7 @@
     </Key>
     <Property Name="Object_Document_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Object_Id" Type="int" />
-    <Property Name="Document_Id" Type="int" />
-    <Property Name="Specialized_Id" Type="int" />
+    <Property Name="Document_Specialty_Id" Type="int" />
   </EntityType>
   <EntityType Name="Object_Document_Parameter">
     <Key>
@@ -75,14 +82,6 @@
     <Property Name="In_Object_Id" Type="int" />
     <Property Name="Out_Object_Id" Type="int" />
     <Property Name="Object_Object_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Object_Speciality">
-    <Key>
-      <PropertyRef Name="Object_Speciality_Id" />
-    </Key>
-    <Property Name="Object_Speciality_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Object_Document_Id" Type="int" />
-    <Property Name="Speciality_Id" Type="int" />
   </EntityType>
   <EntityType Name="Parameter">
     <Key>
@@ -165,7 +164,6 @@
     </Key>
     <Property Name="Variation_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Variation_Name" Type="nchar" MaxLength="50" />
-    <Property Name="Place_Id" Type="int" />
   </EntityType>
   <EntityType Name="Variation_Object">
     <Key>
@@ -239,15 +237,39 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Object_Document_Document">
+  <Association Name="FK_Document_Specialty_Document">
     <End Role="Document" Type="Self.Document" Multiplicity="0..1" />
-    <End Role="Object_Document" Type="Self.Object_Document" Multiplicity="*" />
+    <End Role="Document_Specialty" Type="Self.Document_Specialty" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Document">
         <PropertyRef Name="Document_Id" />
       </Principal>
-      <Dependent Role="Object_Document">
+      <Dependent Role="Document_Specialty">
         <PropertyRef Name="Document_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Document_Specialty_Specialty">
+    <End Role="Specialty" Type="Self.Specialty" Multiplicity="0..1" />
+    <End Role="Document_Specialty" Type="Self.Document_Specialty" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Specialty">
+        <PropertyRef Name="Specialty_Id" />
+      </Principal>
+      <Dependent Role="Document_Specialty">
+        <PropertyRef Name="Specialty_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Object_Document_Document_Specialty1">
+    <End Role="Document_Specialty" Type="Self.Document_Specialty" Multiplicity="0..1" />
+    <End Role="Object_Document" Type="Self.Object_Document" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Document_Specialty">
+        <PropertyRef Name="Document_Specialty_Id" />
+      </Principal>
+      <Dependent Role="Object_Document">
+        <PropertyRef Name="Document_Specialty_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -344,30 +366,6 @@
       </Principal>
       <Dependent Role="Object">
         <PropertyRef Name="Place_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Object_Speciality_Object_Document">
-    <End Role="Object_Document" Type="Self.Object_Document" Multiplicity="0..1" />
-    <End Role="Object_Speciality" Type="Self.Object_Speciality" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Object_Document">
-        <PropertyRef Name="Object_Document_Id" />
-      </Principal>
-      <Dependent Role="Object_Speciality">
-        <PropertyRef Name="Object_Document_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Object_Speciality_Specialty">
-    <End Role="Specialty" Type="Self.Specialty" Multiplicity="0..1" />
-    <End Role="Object_Speciality" Type="Self.Object_Speciality" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Specialty">
-        <PropertyRef Name="Specialty_Id" />
-      </Principal>
-      <Dependent Role="Object_Speciality">
-        <PropertyRef Name="Speciality_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -496,12 +494,12 @@
     <EntitySet Name="Department_Object" EntityType="Self.Department_Object" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Department_User" EntityType="Self.Department_User" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Document" EntityType="Self.Document" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Document_Specialty" EntityType="Self.Document_Specialty" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Object" EntityType="Self.Object" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Object_Document" EntityType="Self.Object_Document" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Object_Document_Parameter" EntityType="Self.Object_Document_Parameter" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Object_Library" EntityType="Self.Object_Library" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Object_Object" EntityType="Self.Object_Object" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Object_Speciality" EntityType="Self.Object_Speciality" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Parameter" EntityType="Self.Parameter" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Parameter_Parameter" EntityType="Self.Parameter_Parameter" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Place" EntityType="Self.Place" Schema="dbo" store:Type="Tables" />
@@ -529,8 +527,16 @@
       <End Role="User" EntitySet="User" />
       <End Role="Department_User" EntitySet="Department_User" />
     </AssociationSet>
-    <AssociationSet Name="FK_Object_Document_Document" Association="Self.FK_Object_Document_Document">
+    <AssociationSet Name="FK_Document_Specialty_Document" Association="Self.FK_Document_Specialty_Document">
       <End Role="Document" EntitySet="Document" />
+      <End Role="Document_Specialty" EntitySet="Document_Specialty" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Document_Specialty_Specialty" Association="Self.FK_Document_Specialty_Specialty">
+      <End Role="Specialty" EntitySet="Specialty" />
+      <End Role="Document_Specialty" EntitySet="Document_Specialty" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Object_Document_Document_Specialty1" Association="Self.FK_Object_Document_Document_Specialty1">
+      <End Role="Document_Specialty" EntitySet="Document_Specialty" />
       <End Role="Object_Document" EntitySet="Object_Document" />
     </AssociationSet>
     <AssociationSet Name="FK_Object_Document_Object" Association="Self.FK_Object_Document_Object">
@@ -564,14 +570,6 @@
     <AssociationSet Name="FK_Object_Place" Association="Self.FK_Object_Place">
       <End Role="Place" EntitySet="Place" />
       <End Role="Object" EntitySet="Object" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Object_Speciality_Object_Document" Association="Self.FK_Object_Speciality_Object_Document">
-      <End Role="Object_Document" EntitySet="Object_Document" />
-      <End Role="Object_Speciality" EntitySet="Object_Speciality" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Object_Speciality_Specialty" Association="Self.FK_Object_Speciality_Specialty">
-      <End Role="Specialty" EntitySet="Specialty" />
-      <End Role="Object_Speciality" EntitySet="Object_Speciality" />
     </AssociationSet>
     <AssociationSet Name="FK_Object_Variation" Association="Self.FK_Object_Variation">
       <End Role="Variation" EntitySet="Variation" />

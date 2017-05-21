@@ -28,7 +28,7 @@ namespace ZepProject
             doc.Type = radioButton2.Checked ? 1 : 0;
             db.Document.Add(doc);
             db.SaveChanges();
-            MessageBox.Show("Добавленно");
+            MessageBox.Show("Добавлено");
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -43,7 +43,7 @@ namespace ZepProject
             spec.Specialty_Code = textBox7.Text;
             db.Specialty.Add(spec);
             db.SaveChanges();
-            MessageBox.Show("Добавленно");
+            MessageBox.Show("Добавлено");
 
         }
 
@@ -53,7 +53,7 @@ namespace ZepProject
             par.Parameter_Name = textBox8.Text;
             db.Parameter.Add(par);
             db.SaveChanges();
-            MessageBox.Show("Добавленно");
+            MessageBox.Show("Добавлено");
 
         }
 
@@ -84,7 +84,7 @@ namespace ZepProject
             { }
             db.Object_Library.Add(obj);
             db.SaveChanges();
-            MessageBox.Show("Добавленно");
+            MessageBox.Show("Добавлено");
 
         }
 
@@ -110,8 +110,6 @@ namespace ZepProject
         {
             Variation var = new Variation();
             var.Variation_Name = textBox4.Text;
-            var.Place_Id = db.Place
-                .FirstOrDefault(o => o.Place_Name == comboBox5.SelectedValue.ToString()).Place_Id;
             Variation_Object vo = new Variation_Object();
                 vo.Object_Id = db.Object_Library
                     .FirstOrDefault(o => o.Object_Library_Name == comboBox4.SelectedValue.ToString()).Object_Library_Id;
@@ -119,7 +117,7 @@ namespace ZepProject
             db.Variation.Add(var);
             db.Variation_Object.Add(vo);
             db.SaveChanges();
-            MessageBox.Show("Добавленно");
+            MessageBox.Show("Добавлено");
 
         }
     }

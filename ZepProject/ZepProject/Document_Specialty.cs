@@ -12,13 +12,21 @@ namespace ZepProject
     using System;
     using System.Collections.Generic;
     
-    public partial class Object_Speciality
+    public partial class Document_Specialty
     {
-        public int Object_Speciality_Id { get; set; }
-        public Nullable<int> Object_Document_Id { get; set; }
-        public Nullable<int> Speciality_Id { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Document_Specialty()
+        {
+            this.Object_Document = new HashSet<Object_Document>();
+        }
     
-        public virtual Object_Document Object_Document { get; set; }
+        public int Document_Specialty_Id { get; set; }
+        public Nullable<int> Document_Id { get; set; }
+        public Nullable<int> Specialty_Id { get; set; }
+    
+        public virtual Document Document { get; set; }
         public virtual Specialty Specialty { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Object_Document> Object_Document { get; set; }
     }
 }
