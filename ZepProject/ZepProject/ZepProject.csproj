@@ -242,6 +242,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ZEPDataSet17.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ZEPDataSet18.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ZEPDataSet18.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ZEPDataSet19.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ZEPDataSet19.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ZEPDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -444,6 +454,28 @@
     </None>
     <None Include="ZEPDataSet17.xss">
       <DependentUpon>ZEPDataSet17.xsd</DependentUpon>
+    </None>
+    <None Include="ZEPDataSet18.xsc">
+      <DependentUpon>ZEPDataSet18.xsd</DependentUpon>
+    </None>
+    <None Include="ZEPDataSet18.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ZEPDataSet18.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ZEPDataSet18.xss">
+      <DependentUpon>ZEPDataSet18.xsd</DependentUpon>
+    </None>
+    <None Include="ZEPDataSet19.xsc">
+      <DependentUpon>ZEPDataSet19.xsd</DependentUpon>
+    </None>
+    <None Include="ZEPDataSet19.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ZEPDataSet19.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ZEPDataSet19.xss">
+      <DependentUpon>ZEPDataSet19.xsd</DependentUpon>
     </None>
     <None Include="ZEPDataSet2.xsc">
       <DependentUpon>ZEPDataSet2.xsd</DependentUpon>

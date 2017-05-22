@@ -32,6 +32,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.documentBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.zEPDataSet17 = new ZepProject.ZEPDataSet17();
             this.documentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.zEPDataSet6 = new ZepProject.ZEPDataSet6();
             this.label2 = new System.Windows.Forms.Label();
@@ -59,7 +61,6 @@
             this.object_LibraryTableAdapter1 = new ZepProject.ZEPDataSet7TableAdapters.Object_LibraryTableAdapter();
             this.parameterTableAdapter = new ZepProject.ZEPDataSet8TableAdapters.ParameterTableAdapter();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Projects = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label13 = new System.Windows.Forms.Label();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.specialtyBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -75,9 +76,10 @@
             this.zEPDataSet16 = new ZepProject.ZEPDataSet16();
             this.specialtyBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.specialtyTableAdapter2 = new ZepProject.ZEPDataSet16TableAdapters.SpecialtyTableAdapter();
-            this.zEPDataSet17 = new ZepProject.ZEPDataSet17();
-            this.documentBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.documentTableAdapter2 = new ZepProject.ZEPDataSet17TableAdapters.DocumentTableAdapter();
+            this.Projects = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.documentBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zEPDataSet17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.zEPDataSet6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.objectLibraryBindingSource1)).BeginInit();
@@ -96,8 +98,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.zEPDataSet14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.zEPDataSet16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.specialtyBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.zEPDataSet17)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.documentBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -131,6 +131,16 @@
             this.comboBox1.TabIndex = 4;
             this.comboBox1.ValueMember = "Document_Name";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.SetData2);
+            // 
+            // documentBindingSource2
+            // 
+            this.documentBindingSource2.DataMember = "Document";
+            this.documentBindingSource2.DataSource = this.zEPDataSet17;
+            // 
+            // zEPDataSet17
+            // 
+            this.zEPDataSet17.DataSetName = "ZEPDataSet17";
+            this.zEPDataSet17.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // documentBindingSource
             // 
@@ -327,12 +337,6 @@
             this.dataGridView1.TabIndex = 13;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // Projects
-            // 
-            this.Projects.HeaderText = "Проекты";
-            this.Projects.Name = "Projects";
-            this.Projects.Width = 77;
-            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -434,19 +438,15 @@
             // 
             this.specialtyTableAdapter2.ClearBeforeFill = true;
             // 
-            // zEPDataSet17
-            // 
-            this.zEPDataSet17.DataSetName = "ZEPDataSet17";
-            this.zEPDataSet17.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // documentBindingSource2
-            // 
-            this.documentBindingSource2.DataMember = "Document";
-            this.documentBindingSource2.DataSource = this.zEPDataSet17;
-            // 
             // documentTableAdapter2
             // 
             this.documentTableAdapter2.ClearBeforeFill = true;
+            // 
+            // Projects
+            // 
+            this.Projects.HeaderText = "Специальности";
+            this.Projects.Name = "Projects";
+            this.Projects.Width = 110;
             // 
             // DbUpdating2
             // 
@@ -473,6 +473,8 @@
             this.Name = "DbUpdating2";
             this.Text = "Db_update_2";
             this.Load += new System.EventHandler(this.DbUpdating2_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.documentBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zEPDataSet17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.zEPDataSet6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.objectLibraryBindingSource1)).EndInit();
@@ -492,8 +494,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.zEPDataSet14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.zEPDataSet16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.specialtyBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.zEPDataSet17)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.documentBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -531,7 +531,6 @@
         private System.Windows.Forms.BindingSource parameterBindingSource;
         private ZEPDataSet8TableAdapters.ParameterTableAdapter parameterTableAdapter;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Projects;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox comboBox5;
         private System.Windows.Forms.ComboBox comboBox6;
@@ -550,5 +549,6 @@
         private ZEPDataSet17 zEPDataSet17;
         private System.Windows.Forms.BindingSource documentBindingSource2;
         private ZEPDataSet17TableAdapters.DocumentTableAdapter documentTableAdapter2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Projects;
     }
 }
