@@ -61,6 +61,7 @@
             this.object_LibraryTableAdapter1 = new ZepProject.ZEPDataSet7TableAdapters.Object_LibraryTableAdapter();
             this.parameterTableAdapter = new ZepProject.ZEPDataSet8TableAdapters.ParameterTableAdapter();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Projects = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label13 = new System.Windows.Forms.Label();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.specialtyBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -77,7 +78,22 @@
             this.specialtyBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.specialtyTableAdapter2 = new ZepProject.ZEPDataSet16TableAdapters.SpecialtyTableAdapter();
             this.documentTableAdapter2 = new ZepProject.ZEPDataSet17TableAdapters.DocumentTableAdapter();
-            this.Projects = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label7 = new System.Windows.Forms.Label();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.parameterNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.parameterBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.zEPDataSet24 = new ZepProject.ZEPDataSet24();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.parameterNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.parameterBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.zEPDataSet25 = new ZepProject.ZEPDataSet25();
+            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.ПредшествующийПараметр = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ПолученныйПараметр = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button2 = new System.Windows.Forms.Button();
+            this.parameterTableAdapter1 = new ZepProject.ZEPDataSet24TableAdapters.ParameterTableAdapter();
+            this.parameterTableAdapter2 = new ZepProject.ZEPDataSet25TableAdapters.ParameterTableAdapter();
+            this.comboBox7 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.documentBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.zEPDataSet17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentBindingSource)).BeginInit();
@@ -98,11 +114,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.zEPDataSet14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.zEPDataSet16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.specialtyBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.parameterBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zEPDataSet24)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.parameterBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zEPDataSet25)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(304, 425);
+            this.button1.Location = new System.Drawing.Point(105, 119);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
@@ -113,7 +136,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(213, 247);
+            this.label1.Location = new System.Drawing.Point(881, 52);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(96, 13);
             this.label1.TabIndex = 2;
@@ -125,9 +148,9 @@
             this.comboBox1.DataSource = this.documentBindingSource2;
             this.comboBox1.DisplayMember = "Document_Name";
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(47, 263);
+            this.comboBox1.Location = new System.Drawing.Point(653, 68);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.Size = new System.Drawing.Size(183, 21);
             this.comboBox1.TabIndex = 4;
             this.comboBox1.ValueMember = "Document_Name";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.SetData2);
@@ -155,7 +178,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(44, 356);
+            this.label2.Location = new System.Drawing.Point(650, 161);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(149, 13);
             this.label2.TabIndex = 2;
@@ -165,7 +188,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(44, 247);
+            this.label3.Location = new System.Drawing.Point(650, 52);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(108, 13);
             this.label3.TabIndex = 2;
@@ -175,7 +198,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(25, 14);
+            this.label4.Location = new System.Drawing.Point(25, 16);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(130, 13);
             this.label4.TabIndex = 2;
@@ -196,9 +219,9 @@
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(216, 263);
+            this.comboBox2.Location = new System.Drawing.Point(859, 68);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
+            this.comboBox2.Size = new System.Drawing.Size(180, 21);
             this.comboBox2.TabIndex = 4;
             // 
             // objectLibraryBindingSource1
@@ -216,9 +239,9 @@
             this.comboBox3.DataSource = this.parameterBindingSource;
             this.comboBox3.DisplayMember = "Parameter_Name";
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(47, 372);
+            this.comboBox3.Location = new System.Drawing.Point(653, 177);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 21);
+            this.comboBox3.Size = new System.Drawing.Size(183, 21);
             this.comboBox3.TabIndex = 4;
             this.comboBox3.ValueMember = "Parameter_Name";
             // 
@@ -260,15 +283,16 @@
             this.panel1.Controls.Add(this.radioButton3);
             this.panel1.Controls.Add(this.radioButton1);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Location = new System.Drawing.Point(216, 300);
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Location = new System.Drawing.Point(859, 105);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(163, 119);
+            this.panel1.Size = new System.Drawing.Size(180, 142);
             this.panel1.TabIndex = 6;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(44, 300);
+            this.label5.Location = new System.Drawing.Point(650, 105);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(132, 13);
             this.label5.TabIndex = 2;
@@ -278,9 +302,9 @@
             // comboBox4
             // 
             this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(47, 316);
+            this.comboBox4.Location = new System.Drawing.Point(653, 121);
             this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(121, 21);
+            this.comboBox4.Size = new System.Drawing.Size(183, 21);
             this.comboBox4.TabIndex = 4;
             // 
             // specialtyBindingSource
@@ -330,17 +354,23 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Projects});
-            this.dataGridView1.Location = new System.Drawing.Point(47, 80);
+            this.dataGridView1.Location = new System.Drawing.Point(49, 73);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(230, 93);
+            this.dataGridView1.Size = new System.Drawing.Size(273, 224);
             this.dataGridView1.TabIndex = 13;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // Projects
+            // 
+            this.Projects.HeaderText = "Специальности";
+            this.Projects.Name = "Projects";
+            this.Projects.Width = 110;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(153, 55);
+            this.label13.Location = new System.Drawing.Point(155, 48);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(0, 13);
             this.label13.TabIndex = 12;
@@ -350,9 +380,9 @@
             this.comboBox5.DataSource = this.specialtyBindingSource;
             this.comboBox5.DisplayMember = "Specialty_Name";
             this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(182, 52);
+            this.comboBox5.Location = new System.Drawing.Point(184, 45);
             this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(121, 21);
+            this.comboBox5.Size = new System.Drawing.Size(184, 21);
             this.comboBox5.TabIndex = 10;
             this.comboBox5.ValueMember = "Specialty_Name";
             // 
@@ -371,9 +401,9 @@
             this.comboBox6.DataSource = this.documentBindingSource1;
             this.comboBox6.DisplayMember = "Document_Name";
             this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(182, 21);
+            this.comboBox6.Location = new System.Drawing.Point(184, 14);
             this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(121, 21);
+            this.comboBox6.Size = new System.Drawing.Size(184, 21);
             this.comboBox6.TabIndex = 11;
             this.comboBox6.ValueMember = "Document_Name";
             this.comboBox6.SelectedIndexChanged += new System.EventHandler(this.SetData);
@@ -391,7 +421,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(44, 55);
+            this.label12.Location = new System.Drawing.Point(46, 48);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(132, 13);
             this.label12.TabIndex = 8;
@@ -400,7 +430,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(68, 21);
+            this.label6.Location = new System.Drawing.Point(70, 14);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(108, 13);
             this.label6.TabIndex = 9;
@@ -408,7 +438,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(315, 52);
+            this.button4.Location = new System.Drawing.Point(374, 44);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(22, 21);
             this.button4.TabIndex = 7;
@@ -442,17 +472,140 @@
             // 
             this.documentTableAdapter2.ClearBeforeFill = true;
             // 
-            // Projects
+            // label7
             // 
-            this.Projects.HeaderText = "Специальности";
-            this.Projects.Name = "Projects";
-            this.Projects.Width = 110;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(650, 17);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(103, 13);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "Выберете станцию";
+            this.label7.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AutoGenerateColumns = false;
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.parameterNameDataGridViewTextBoxColumn});
+            this.dataGridView2.DataSource = this.parameterBindingSource1;
+            this.dataGridView2.Location = new System.Drawing.Point(325, 342);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersVisible = false;
+            this.dataGridView2.Size = new System.Drawing.Size(291, 357);
+            this.dataGridView2.TabIndex = 14;
+            // 
+            // parameterNameDataGridViewTextBoxColumn
+            // 
+            this.parameterNameDataGridViewTextBoxColumn.DataPropertyName = "Parameter_Name";
+            this.parameterNameDataGridViewTextBoxColumn.HeaderText = "Предшествующий параметр";
+            this.parameterNameDataGridViewTextBoxColumn.Name = "parameterNameDataGridViewTextBoxColumn";
+            this.parameterNameDataGridViewTextBoxColumn.Width = 159;
+            // 
+            // parameterBindingSource1
+            // 
+            this.parameterBindingSource1.DataMember = "Parameter";
+            this.parameterBindingSource1.DataSource = this.zEPDataSet24;
+            // 
+            // zEPDataSet24
+            // 
+            this.zEPDataSet24.DataSetName = "ZEPDataSet24";
+            this.zEPDataSet24.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.AutoGenerateColumns = false;
+            this.dataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.parameterNameDataGridViewTextBoxColumn1});
+            this.dataGridView3.DataSource = this.parameterBindingSource2;
+            this.dataGridView3.Location = new System.Drawing.Point(38, 342);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.RowHeadersVisible = false;
+            this.dataGridView3.Size = new System.Drawing.Size(270, 365);
+            this.dataGridView3.TabIndex = 15;
+            // 
+            // parameterNameDataGridViewTextBoxColumn1
+            // 
+            this.parameterNameDataGridViewTextBoxColumn1.DataPropertyName = "Parameter_Name";
+            this.parameterNameDataGridViewTextBoxColumn1.HeaderText = "Полученный параметр";
+            this.parameterNameDataGridViewTextBoxColumn1.Name = "parameterNameDataGridViewTextBoxColumn1";
+            this.parameterNameDataGridViewTextBoxColumn1.Width = 133;
+            // 
+            // parameterBindingSource2
+            // 
+            this.parameterBindingSource2.DataMember = "Parameter";
+            this.parameterBindingSource2.DataSource = this.zEPDataSet25;
+            // 
+            // zEPDataSet25
+            // 
+            this.zEPDataSet25.DataSetName = "ZEPDataSet25";
+            this.zEPDataSet25.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dataGridView4
+            // 
+            this.dataGridView4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ПредшествующийПараметр,
+            this.ПолученныйПараметр});
+            this.dataGridView4.Location = new System.Drawing.Point(684, 342);
+            this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.RowHeadersVisible = false;
+            this.dataGridView4.Size = new System.Drawing.Size(569, 357);
+            this.dataGridView4.TabIndex = 16;
+            // 
+            // ПредшествующийПараметр
+            // 
+            this.ПредшествующийПараметр.HeaderText = "Полученный параметр";
+            this.ПредшествующийПараметр.Name = "ПредшествующийПараметр";
+            this.ПредшествующийПараметр.Width = 133;
+            // 
+            // ПолученныйПараметр
+            // 
+            this.ПолученныйПараметр.HeaderText = "Предшествующий параметр";
+            this.ПолученныйПараметр.Name = "ПолученныйПараметр";
+            this.ПолученныйПараметр.Width = 159;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(622, 342);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(56, 357);
+            this.button2.TabIndex = 17;
+            this.button2.Text = ">>";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // parameterTableAdapter1
+            // 
+            this.parameterTableAdapter1.ClearBeforeFill = true;
+            // 
+            // parameterTableAdapter2
+            // 
+            this.parameterTableAdapter2.ClearBeforeFill = true;
+            // 
+            // comboBox7
+            // 
+            this.comboBox7.FormattingEnabled = true;
+            this.comboBox7.Location = new System.Drawing.Point(759, 14);
+            this.comboBox7.Name = "comboBox7";
+            this.comboBox7.Size = new System.Drawing.Size(183, 21);
+            this.comboBox7.TabIndex = 18;
+            this.comboBox7.SelectedIndexChanged += new System.EventHandler(this.comboBox7_SelectedIndexChanged);
             // 
             // DbUpdating2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(448, 481);
+            this.ClientSize = new System.Drawing.Size(1261, 741);
+            this.Controls.Add(this.comboBox7);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.dataGridView4);
+            this.Controls.Add(this.dataGridView3);
+            this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.comboBox5);
@@ -467,11 +620,11 @@
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label5);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
             this.Name = "DbUpdating2";
-            this.Text = "Db_update_2";
+            this.Text = "Работа с документами и параметрами";
             this.Load += new System.EventHandler(this.DbUpdating2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.documentBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.zEPDataSet17)).EndInit();
@@ -494,6 +647,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.zEPDataSet14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.zEPDataSet16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.specialtyBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.parameterBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zEPDataSet24)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.parameterBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zEPDataSet25)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -550,5 +710,21 @@
         private System.Windows.Forms.BindingSource documentBindingSource2;
         private ZEPDataSet17TableAdapters.DocumentTableAdapter documentTableAdapter2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Projects;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.DataGridView dataGridView4;
+        private System.Windows.Forms.Button button2;
+        private ZEPDataSet24 zEPDataSet24;
+        private System.Windows.Forms.BindingSource parameterBindingSource1;
+        private ZEPDataSet24TableAdapters.ParameterTableAdapter parameterTableAdapter1;
+        private ZEPDataSet25 zEPDataSet25;
+        private System.Windows.Forms.BindingSource parameterBindingSource2;
+        private ZEPDataSet25TableAdapters.ParameterTableAdapter parameterTableAdapter2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn parameterNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn parameterNameDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.ComboBox comboBox7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ПредшествующийПараметр;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ПолученныйПараметр;
     }
 }

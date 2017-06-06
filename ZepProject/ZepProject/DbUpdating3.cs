@@ -18,6 +18,11 @@ namespace ZepProject
         public DbUpdating3()
         {
             InitializeComponent();
+            comboBox3.Items.Clear();
+            foreach (var sta in UserData.stations)
+            {
+                comboBox3.Items.Add(sta);
+            }
         }
 
         private void DbUpdating3_Load(object sender, EventArgs e)
@@ -84,6 +89,12 @@ namespace ZepProject
                 }
             }
 
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UserData.station = db.Station.FirstOrDefault(s => s.Station_Name == comboBox3.SelectedItem.ToString())
+                .Station_Id;
         }
     }
 }

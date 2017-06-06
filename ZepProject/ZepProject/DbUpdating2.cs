@@ -26,7 +26,13 @@ namespace ZepProject
             //}
 
             dataGridView1.RowCount = 100;
+            dataGridView4.RowCount = 100;
+            foreach (var sta in UserData.stations)
+            {
+                comboBox7.Items.Add(sta);
+            }
             SetObjects();
+            FillParams();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -53,7 +59,7 @@ namespace ZepProject
             odp.Object_Document_Id = od.Object_Document_Id;
             odp.Parameter_Id = db.Parameter.FirstOrDefault(p => p.Parameter_Name == comboBox3.SelectedValue.ToString())
                 .Parameter_Id;
-            odp.Type = radioButton1.Checked ? 0 : radioButton2.Checked ? 1 : 3;
+            odp.Type = radioButton1.Checked ? 0 : radioButton2.Checked ? 1 : 2;
             db.Object_Document_Parameter.Add(odp);
             db.Object_Document.Add(od);
             db.SaveChanges();
@@ -62,6 +68,10 @@ namespace ZepProject
 
         private void DbUpdating2_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "zEPDataSet25.Parameter". При необходимости она может быть перемещена или удалена.
+            this.parameterTableAdapter2.Fill(this.zEPDataSet25.Parameter);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "zEPDataSet24.Parameter". При необходимости она может быть перемещена или удалена.
+            this.parameterTableAdapter1.Fill(this.zEPDataSet24.Parameter);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "zEPDataSet17.Document". При необходимости она может быть перемещена или удалена.
             this.documentTableAdapter2.Fill(this.zEPDataSet17.Document);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "zEPDataSet16.Specialty". При необходимости она может быть перемещена или удалена.
@@ -132,6 +142,7 @@ namespace ZepProject
 
         private void SetObjects()
         {
+            comboBox2.Items.Clear();
             foreach (var obj in db.Object)
             {
                 foreach (var dob in db.Department_Object)
@@ -160,6 +171,40 @@ namespace ZepProject
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string par;
+            par = dataGridView2.SelectedCells[0].Value.ToString();
+            Parameter_Parameter pp = new Parameter_Parameter();
+            pp.Parameter_First = db.Parameter.FirstOrDefault(p => p.Parameter_Name == par).Parameter_Id;
+            par = dataGridView3.SelectedCells[0].Value.ToString();
+            pp.Parameter_Second = db.Parameter.FirstOrDefault(p => p.Parameter_Name == par).Parameter_Id;
+            db.Parameter_Parameter.Add(pp);
+            db.SaveChanges();
+            MessageBox.Show("Добавлено");
+            FillParams();
+        }
+
+        private void FillParams()
+        {
+            int i = 0;
+            foreach (var pp in db.Parameter_Parameter)
+            {
+                dataGridView4.Rows[i].Cells[1].Value = db.Parameter
+                    .FirstOrDefault(p => p.Parameter_Id == pp.Parameter_First).Parameter_Name;
+                dataGridView4.Rows[i].Cells[0].Value = db.Parameter
+                    .FirstOrDefault(p => p.Parameter_Id == pp.Parameter_Second).Parameter_Name;
+                i++;
+            }
+        }
+
+        private void comboBox7_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UserData.station = db.Station.FirstOrDefault(s => s.Station_Name == comboBox7.SelectedItem.ToString())
+                .Station_Id;
+            SetObjects();
         }
     }
 }

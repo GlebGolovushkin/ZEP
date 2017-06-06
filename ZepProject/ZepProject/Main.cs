@@ -20,6 +20,7 @@ namespace ZepProject
             InitializeComponent();
             dataGridView1.RowCount = 100;
             dataGridView2.RowCount = 100;
+            SetObjects();
         }
 
         private void элементыВСправочникиToolStripMenuItem_Click(object sender, EventArgs e)
@@ -137,6 +138,8 @@ namespace ZepProject
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
+
+
             for (int j = 0; j < dataGridView1.RowCount; j++)
             {
                 for (int k = 0; k < dataGridView1.ColumnCount; k++)
@@ -144,14 +147,6 @@ namespace ZepProject
                     dataGridView1.Rows[j].Cells[k].Value = "";
                 }
             }
-            for (int j = 0; j < dataGridView2.RowCount; j++)
-            {
-                for (int k = 0; k < dataGridView2.ColumnCount; k++)
-                {
-                    dataGridView2.Rows[j].Cells[k].Value = "";
-                }
-            }
-            SetObjects();
             int i = 0;
             foreach (var station in UserData.stations)
             {
@@ -170,7 +165,7 @@ namespace ZepProject
                                     dataGridView1.Rows[i].Cells[2].Value =
                                         db.Parameter.FirstOrDefault(p => p.Parameter_Id == odp.Parameter_Id)
                                             .Parameter_Name;
-                                    dataGridView1.Rows[i].Cells[3].Value = odp.Type;
+                                    dataGridView1.Rows[i].Cells[3].Value = odp.Type == 0? "Входной" : odp.Type==1? "Рассчётный" : "Выходной";
                                     dataGridView1.Rows[i].Cells[1].Value =
                                         db.Specialty
                                             .FirstOrDefault(
@@ -192,47 +187,118 @@ namespace ZepProject
                             }
                         }
                     }
+                    string path = treeView1.SelectedNode.FullPath;
+                    string[] nodes = path.Split((char)92);
+                    string nam = treeView1.SelectedNode.Text;
+                    label4.Text = "";
+                    string q = nodes[0].ToString();
+                    if (UserData.station != db.Station.FirstOrDefault(s => s.Station_Name == q).Station_Id)
+                    {
+                        UserData.station = db.Station.FirstOrDefault(s => s.Station_Name == q).Station_Id;
+                        SetObjects();
+                        foreach (TreeNode node in treeView1.Nodes)
+                        {
+                            TreeColor(node, q);
+                        }
+                    }
+                    try
+                    {
+
+                        label4.Text += db.Station.FirstOrDefault(s => s.Station_Id == UserData.station).Station_KKS.ToString().Substring(0, db.Station.FirstOrDefault(s => s.Station_Id == UserData.station).Station_KKS.ToString().IndexOf(' '));
+                        label4.Text += " ";
+                        label4.Text+=db.Object.FirstOrDefault(o => o.Object_Library_Id == db.Object_Library.FirstOrDefault(ol => ol.Object_Library_Name == nam).Object_Library_Id && db.Station_Object.Any(so => so.Object_Id==o.Object_Id && so.Station_Id == UserData.station)).Amount;
+                    }
+                    catch(Exception ew)
+                    { }
+                    string name;
+                    for (int j = 1; j < nodes.Length; j++)
+                    {
+                        name = nodes[j].ToString();
+                        label4.Text += db.Object_Library.FirstOrDefault(o => o.Object_Library_Name == name)
+                            .Object_KKS[0];
+                    }
                 }
                 catch (Exception exception)
                 {
                 }
             }
+            
         }
 
         private void SetObjects()
         {
-            string stat;
-            try
+            for (int j = 0; j < dataGridView2.RowCount; j++)
             {
-                stat = treeView1.SelectedNode.FullPath.Substring(0, treeView1.SelectedNode.FullPath.IndexOf(@"\"));
+                for (int k = 0; k < dataGridView2.ColumnCount; k++)
+                {
+                    dataGridView2.Rows[j].Cells[k].Value = "";
+                }
             }
-            catch (Exception e)
-            {
-                stat = treeView1.SelectedNode.Text;
-            }
-
             int i = 0;
-            foreach (var oo in db.Object_Object)
+            foreach (var odp1 in db.Object_Document_Parameter)
             {
+                foreach (var odp2 in db.Object_Document_Parameter)
+                {
+                    if (odp2.Parameter_Id == odp1.Parameter_Id)
+                    {
+                        string first = db.Object_Library
+                            .First(ol => ol.Object_Library_Id ==
+                                         db.Object.FirstOrDefault(o => o.Object_Id == db.Object_Document
+                                                                           .FirstOrDefault(
+                                                                               od => od.Object_Document_Id == odp1
+                                                                                         .Object_Document_Id).Object_Id)
+                                             .Object_Library_Id).Object_Library_Name;
+                        string second = db.Object_Library
+                            .First(ol => ol.Object_Library_Id ==
+                                         db.Object.FirstOrDefault(o => o.Object_Id == db.Object_Document
+                                                                           .FirstOrDefault(
+                                                                               od => od.Object_Document_Id == odp2
+                                                                                         .Object_Document_Id).Object_Id)
+                                             .Object_Library_Id).Object_Library_Name;
+                        
+                        if (db.Station_Object.FirstOrDefault(so => so.Station_Id == UserData.station && so.Object_Id == odp1.Object_Document.Object.Object_Id)!=null && db.Station_Object.FirstOrDefault(so => so.Station_Id == UserData.station && so.Object_Id == odp2.Object_Document.Object.Object_Id)!=null)
+                        { 
+                            if (odp1.Type == 0 && odp2.Type == 2 && second != first)
+                        {
+                            for (int j = 0; j <= i; j++)
+                            {
+                                if ((string) dataGridView2.Rows[j].Cells[0].Value == second &&
+                                    (string) dataGridView2.Rows[j].Cells[1].Value == first)
+                                {
+                                    break;
+                                }
+                                if (j == i)
+                                {
+                                    dataGridView2.Rows[i].Cells[0].Value = second;
+                                    dataGridView2.Rows[i].Cells[1].Value = first;
+                                    i++;
+                                    break;
+                                }
+                            }
+                        }
+                            if (odp1.Type == 2 && odp2.Type == 0)
+                            {
+                                for (int j = 0; j <= i; j++)
+                                {
+                                    if ((string) dataGridView2.Rows[j].Cells[0].Value == first &&
+                                        (string) dataGridView2.Rows[j].Cells[1].Value == second)
+                                    {
+                                        break;
+                                    }
+                                    if (j == i)
+                                    {
+                                        dataGridView2.Rows[i].Cells[0].Value = first;
+                                        dataGridView2.Rows[i].Cells[1].Value = second;
+                                        i++;
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
                 try
                 {
-                    dataGridView2.Rows[i].Cells[0].Value = db.Object_Library
-                        .FirstOrDefault(
-                            ol => db.Object.FirstOrDefault(
-                                          o => oo.Out_Object_Id == o.Object_Id &&
-                                               db.Station_Object.Any(so => so.Station_Id == db.Station.FirstOrDefault(st => st.Station_Name == stat).Station_Id &&
-                                                                           so.Object_Id == o.Object_Id))
-                                      .Object_Library_Id ==
-                                  ol.Object_Library_Id).Object_Library_Name;
-                    dataGridView2.Rows[i].Cells[1].Value = db.Object_Library
-                        .FirstOrDefault(
-                            ol => db.Object.FirstOrDefault(
-                                          o => oo.In_Object_Id == o.Object_Id &&
-                                               db.Station_Object.Any(so => so.Station_Id == db.Station.FirstOrDefault(st => st.Station_Name == stat).Station_Id &&
-                                                                           so.Object_Id == o.Object_Id))
-                                      .Object_Library_Id ==
-                                  ol.Object_Library_Id).Object_Library_Name;
-                    i++;
                 }
                 catch (Exception e)
                 { }
@@ -245,34 +311,64 @@ namespace ZepProject
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        public void TreeColor(TreeNode node, string q)
         {
-            string stat;
-            try
+            if (node.Nodes.Count > 0)
             {
-                stat = treeView1.SelectedNode.FullPath.Substring(0, treeView1.SelectedNode.FullPath.IndexOf(@"\"));
+                foreach (TreeNode nod in node.Nodes)
+                {
+                    TreeColor(nod,q);
+                }
             }
-            catch (Exception ex)
+            if (node.FullPath.Split((char)92)[0] == q)
             {
-                stat = treeView1.SelectedNode.Text;
+                bool exis = false;
+                for (int j = 0; j < dataGridView2.RowCount; j++)
+                {
+                    for (int k = 0; k < dataGridView2.ColumnCount; k++)
+                    {
+                        if (dataGridView2.Rows[j].Cells[k].Value == node.Text)
+                        {
+                            exis = true;
+                        }
+                    }
+                }
+                if (!exis)
+                {
+                    node.ForeColor = Color.DarkOrange;
+                }
+                else
+                {
+                    bool gj = false;
+                    foreach (var odp in db.Object_Document_Parameter)
+                    {
+                        if (odp.Type == 0 && odp.Object_Document.Object.Object_Library.Object_Library_Name == node.Text && db.Station_Object.FirstOrDefault(so => so.Station_Id == UserData.station && so.Object_Id == odp.Object_Document.Object.Object_Id) != null)
+                        {
+                            gj = false;
+                            foreach (var odp2 in db.Object_Document_Parameter)
+                            {
+                                if (odp.Parameter_Id == odp2.Parameter_Id && odp2.Type == 2 && db.Station_Object.FirstOrDefault(so => so.Station_Id == UserData.station && so.Object_Id == odp2.Object_Document.Object.Object_Id) != null)
+                                {
+                                    gj = true;
+                                    break;
+                                }
+                            }
+                            if (!gj)
+                            {
+                                node.ForeColor = Color.Brown;
+                                break;
+                            }
+                            gj = false;
+                        }
+                    }
+                }
             }
-            try
-            {
-                Object_Object oo = new Object_Object();
-                oo.Out_Object_Id = db.Object.FirstOrDefault(o => o.Object_Library_Id == db.Object_Library
-                                                                     .FirstOrDefault(ol => ol.Object_Library_Name == comboBox1.SelectedValue.ToString()).Object_Library_Id && db.Station_Object.Any(so => so.Station_Id == db.Station.FirstOrDefault(st => st.Station_Name == stat).Station_Id &&
-                                                                                                                                                                                                          so.Object_Id == o.Object_Id)).Object_Id;
-                oo.In_Object_Id = db.Object.FirstOrDefault(o => o.Object_Library_Id == db.Object_Library
-                                                                     .FirstOrDefault(ol => ol.Object_Library_Name == comboBox2.SelectedValue.ToString()).Object_Library_Id && db.Station_Object.Any(so => so.Station_Id == db.Station.FirstOrDefault(st => st.Station_Name == stat).Station_Id &&
-                                                                                                                                                                                                          so.Object_Id == o.Object_Id)).Object_Id;
-                db.Object_Object.Add((oo));
-                db.SaveChanges();
-                MessageBox.Show("Добавлено");
-            }
-            catch (Exception exception)
-            {
-                MessageBox.Show("Ошибка");
-            }
+        }
+
+        private void выгрузкаВФайлToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            File file = new File();
+            file.ShowDialog();
         }
     }
 }

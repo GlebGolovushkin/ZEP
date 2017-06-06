@@ -38,6 +38,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.departmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.zEPDataSet13 = new ZepProject.ZEPDataSet13();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -53,26 +55,24 @@
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.stationBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.zEPDataSet12 = new ZepProject.ZEPDataSet12();
             this.button4 = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
-            this.zEPDataSet12 = new ZepProject.ZEPDataSet12();
-            this.stationBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.stationTableAdapter = new ZepProject.ZEPDataSet12TableAdapters.StationTableAdapter();
-            this.zEPDataSet13 = new ZepProject.ZEPDataSet13();
-            this.departmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.departmentTableAdapter = new ZepProject.ZEPDataSet13TableAdapters.DepartmentTableAdapter();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Projects = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label14 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
-            ((System.ComponentModel.ISupportInitialize)(this.zEPDataSet12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stationBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.zEPDataSet13)).BeginInit();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.label14 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zEPDataSet13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stationBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zEPDataSet12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -106,7 +106,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(362, 18);
+            this.label2.Location = new System.Drawing.Point(411, 18);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(199, 13);
             this.label2.TabIndex = 1;
@@ -116,6 +116,7 @@
             // 
             this.textBox2.Location = new System.Drawing.Point(124, 76);
             this.textBox2.Name = "textBox2";
+            this.textBox2.PasswordChar = '*';
             this.textBox2.Size = new System.Drawing.Size(121, 20);
             this.textBox2.TabIndex = 2;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
@@ -154,13 +155,23 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(124, 113);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.Size = new System.Drawing.Size(176, 21);
             this.comboBox1.TabIndex = 4;
             this.comboBox1.ValueMember = "Department_Name";
             // 
+            // departmentBindingSource
+            // 
+            this.departmentBindingSource.DataMember = "Department";
+            this.departmentBindingSource.DataSource = this.zEPDataSet13;
+            // 
+            // zEPDataSet13
+            // 
+            this.zEPDataSet13.DataSetName = "ZEPDataSet13";
+            this.zEPDataSet13.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(456, 179);
+            this.button1.Location = new System.Drawing.Point(505, 179);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(83, 23);
             this.button1.TabIndex = 0;
@@ -169,7 +180,7 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(418, 76);
+            this.textBox4.Location = new System.Drawing.Point(467, 76);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(121, 20);
             this.textBox4.TabIndex = 2;
@@ -178,7 +189,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(367, 79);
+            this.label6.Location = new System.Drawing.Point(416, 79);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(45, 13);
             this.label6.TabIndex = 3;
@@ -187,7 +198,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(306, 113);
+            this.label7.Location = new System.Drawing.Point(355, 113);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(106, 13);
             this.label7.TabIndex = 3;
@@ -196,7 +207,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(374, 50);
+            this.label8.Location = new System.Drawing.Point(423, 50);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(38, 13);
             this.label8.TabIndex = 3;
@@ -205,14 +216,14 @@
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(418, 42);
+            this.comboBox3.Location = new System.Drawing.Point(467, 42);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(121, 21);
             this.comboBox3.TabIndex = 4;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(418, 110);
+            this.textBox3.Location = new System.Drawing.Point(467, 110);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(121, 20);
             this.textBox3.TabIndex = 2;
@@ -256,7 +267,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(306, 152);
+            this.label11.Location = new System.Drawing.Point(355, 152);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(90, 13);
             this.label11.TabIndex = 3;
@@ -265,7 +276,7 @@
             // comboBox4
             // 
             this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(418, 149);
+            this.comboBox4.Location = new System.Drawing.Point(467, 149);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(121, 21);
             this.comboBox4.TabIndex = 4;
@@ -286,13 +297,23 @@
             this.comboBox5.FormattingEnabled = true;
             this.comboBox5.Location = new System.Drawing.Point(124, 144);
             this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(121, 21);
+            this.comboBox5.Size = new System.Drawing.Size(176, 21);
             this.comboBox5.TabIndex = 4;
             this.comboBox5.ValueMember = "Station_Name";
             // 
+            // stationBindingSource
+            // 
+            this.stationBindingSource.DataMember = "Station";
+            this.stationBindingSource.DataSource = this.zEPDataSet12;
+            // 
+            // zEPDataSet12
+            // 
+            this.zEPDataSet12.DataSetName = "ZEPDataSet12";
+            this.zEPDataSet12.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(251, 144);
+            this.button4.Location = new System.Drawing.Point(311, 144);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(22, 21);
             this.button4.TabIndex = 0;
@@ -308,29 +329,9 @@
             this.label13.Size = new System.Drawing.Size(0, 13);
             this.label13.TabIndex = 5;
             // 
-            // zEPDataSet12
-            // 
-            this.zEPDataSet12.DataSetName = "ZEPDataSet12";
-            this.zEPDataSet12.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // stationBindingSource
-            // 
-            this.stationBindingSource.DataMember = "Station";
-            this.stationBindingSource.DataSource = this.zEPDataSet12;
-            // 
             // stationTableAdapter
             // 
             this.stationTableAdapter.ClearBeforeFill = true;
-            // 
-            // zEPDataSet13
-            // 
-            this.zEPDataSet13.DataSetName = "ZEPDataSet13";
-            this.zEPDataSet13.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // departmentBindingSource
-            // 
-            this.departmentBindingSource.DataMember = "Department";
-            this.departmentBindingSource.DataSource = this.zEPDataSet13;
             // 
             // departmentTableAdapter
             // 
@@ -343,7 +344,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Projects});
-            this.dataGridView1.Location = new System.Drawing.Point(15, 172);
+            this.dataGridView1.Location = new System.Drawing.Point(83, 172);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(230, 93);
@@ -365,27 +366,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(249, 56);
             this.panel1.TabIndex = 7;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(10, 288);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(146, 13);
-            this.label14.TabIndex = 3;
-            this.label14.Text = "Укажите тип пользователя";
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(4, 4);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(78, 17);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Сотрудник";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // radioButton2
             // 
@@ -420,6 +400,27 @@
             this.radioButton4.Text = "Администратор";
             this.radioButton4.UseVisualStyleBackColor = true;
             this.radioButton4.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(4, 4);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(78, 17);
+            this.radioButton1.TabIndex = 0;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Сотрудник";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(10, 288);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(146, 13);
+            this.label14.TabIndex = 3;
+            this.label14.Text = "Укажите тип пользователя";
             // 
             // Admin
             // 
@@ -458,10 +459,10 @@
             this.Name = "Admin";
             this.Text = "Работа с учётными записями";
             this.Load += new System.EventHandler(this.Admin_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.zEPDataSet12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stationBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.zEPDataSet13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zEPDataSet13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stationBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zEPDataSet12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
